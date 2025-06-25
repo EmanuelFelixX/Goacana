@@ -1,0 +1,17 @@
+body {
+    margin: 0; 
+    a {text-decoration: none; color: black;}
+
+
+}
+
+#menu {
+    height: 50px;
+    width: 100%;
+    background-color: #90a404;
+
+    #itens {
+        display:flex;
+        column-gap: 10px;
+    }
+}

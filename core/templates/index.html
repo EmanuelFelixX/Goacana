@@ -1,5 +1,23 @@
-{% extends 'base/base.html' %}
-
-{% block 'titulo' %}
-    Goacana - Restaurante Regional
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Goacana - Restaurante Regional</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/x-icon" href="{% static '/images/GoacLogo.png' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static '/CSS/index.css' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static '/CSS/geral.css' %}">
+</head>
+<body>
+    <div class="nav">
+        <a href="" ID>CARDÁPIO</a>
+        <a href="" id="logo"><img src="{% static '/images/GoacLogo.png' %}" alt="" id="logo"></a>
+        <a href="">CONTATO</a>
+    </div>
+    <div class="banner">
+        <h1>BEM-VINDO AO</h1>
+    </div>
+</body>
+</html>

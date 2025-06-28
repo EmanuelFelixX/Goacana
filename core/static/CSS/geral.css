@@ -1,17 +1,34 @@
-body {
-    margin: 0; 
-    a {text-decoration: none; color: black;}
+/* Esse CSS é o que será compartilhado por todo o site, tudo que estiver em mais de uma página deve ser colocado aqui */
 
+/* Esta parte é dedicada às importações. Se desejar importar fontes, faça aqui */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
-}
+/* Esta parte do código é para o body */
+body {margin: 0; font-family: "IM Fell English", serif;}
 
-#menu {
-    height: 50px;
+/* Esta parte do código é para o navigator (barra superior) */
+.nav {
+    position: fixed;
     width: 100%;
-    background-color: #90a404;
+    height: 50px;
+    background-color: #7ca81c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
 
-    #itens {
-        display:flex;
-        column-gap: 10px;
+    #logo {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 }

@@ -1,8 +1,10 @@
 {% load static %}
 <div class="nav">
-    <div id="itens">
-        <a href="">CARDÁPIO</a>
-        <img src="{% static 'images/GoacLogo.png' %}" alt="" id="logo">
+        <a href="{% url 'index' %}" ID>CARDÁPIO</a>
+        <a href="" id="logo"><img src="{% static '/images/GoacLogo.png' %}" alt="" id="logo"></a>
         <a href="">CONTATO</a>
-    </div>
+    <a href="" id="login">
+        <i class="fa-solid fa-right-to-bracket"></i>
+    </a>
+    <i class="fa-solid fa-bars" id="mobi"></i>
 </div>

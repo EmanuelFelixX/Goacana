@@ -1,15 +1,22 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block 'titulo' %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'CSS/geral.css' %}">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Goacana - Restaurante Regional</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/x-icon" href="{% static '/images/GoacLogo.png' %}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static '/CSS/geral.css' %}">
+    <script src="{% static '/JS/geral.js' %}" defer></script>
+    <script src="https://kit.fontawesome.com/236f23f4be.js" crossorigin="anonymous"></script>
+    {% block 'header' %}
+    {% endblock %}
 </head>
 <body>
     {% include './menu.html' %}
-    
+    {% block 'content' %}
+    {% endblock %}
+    {% include './rodape.html' %}
 </body>
 </html>

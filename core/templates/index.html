@@ -1,23 +1,28 @@
+{% extends 'base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Goacana - Restaurante Regional</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" type="image/x-icon" href="{% static '/images/GoacLogo.png' %}">
-    <link rel='stylesheet' type='text/css' media='screen' href="{% static '/CSS/index.css' %}">
-    <link rel='stylesheet' type='text/css' media='screen' href="{% static '/CSS/geral.css' %}">
-</head>
-<body>
-    <div class="nav">
-        <a href="" ID>CARDÁPIO</a>
-        <a href="" id="logo"><img src="{% static '/images/GoacLogo.png' %}" alt="" id="logo"></a>
-        <a href="">CONTATO</a>
+
+{% block 'header' %}
+<link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div class="banner">
+    <h1>BEM-VINDO AO</h1>
+    <h2>GOACANA</h2>
+    <h3>RESTAURANTE REGIONAL</h3>
+</div>
+<div id="contcard">
+    <div class="info">
+        <h1>CARDÁPIO</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt quis voluptatum molestias illo reiciendis incidunt,
+        nam in, harum quia itaque corrupti. Tempore dolore, a adipisci officia ut assumenda sit laboriosam.</p>
+        <a href="">
+            CONFIRA NOSSO CARDÁPIO
+        </a>
     </div>
-    <div class="banner">
-        <h1>BEM-VINDO AO</h1>
+    <div class="image">
+        <img src="{% static '/images/CardCover.png' %}" id="card">
+        <img src="{% static '/images/CardCover.png' %}" id="card">
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

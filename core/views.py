@@ -6,3 +6,6 @@ def index(request):
 
 def contato(request):
     return render(request, 'contato.html')
+
+def perfil(request):
+    return render(request, 'perfil.html')

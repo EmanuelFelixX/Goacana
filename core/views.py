@@ -9,3 +9,6 @@ def contato(request):
 
 def perfil(request):
     return render(request, 'perfil.html')
+
+def cardapio(request):
+    return render(request, 'cardapio.html')

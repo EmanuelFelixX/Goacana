@@ -23,5 +23,5 @@ urlpatterns = [
     path('', index, name='index'),
     path('contato/', contato, name='contato'),
     path('perfil/', perfil, name='perfil'),
-
+    path('cardapio/', cardapio, name = 'cardapio'),
 ]

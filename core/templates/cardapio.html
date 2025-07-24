@@ -1,22 +1,12 @@
-{% load static%}
+{% extends 'base/base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='{% static "cardapio.css" %}'>
-    <script src='main.js'></script>
+{% block 'header' %} 
+<link rel="stylesheet" href="{% static 'CSS/cardapio.css' %}">
+{% endblock %}
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&display=swap');
-    </style>
-</head>
-
-<body>
+{% block 'content' %}
     <div class=container1>
         <div>
 
@@ -74,7 +64,7 @@
         </div>
 
         <div class="imagem">
-            <img class="pag2" width="360px" height="1570px" src="{% static 'pag2.png' %}">
+            <img class="pag2" width="360px" height="1570px" src="{% static 'images/pag2.png' %}">
         </div>
 
     </div>
@@ -82,13 +72,12 @@
     
     <div class = "container2">
         <div class="imagem">
-            <img class="pag3" width="915px" height="468.5px" src="{% static 'pag3.png' %}">
+            <img class="pag3" width="915px" height="468.5px" src="{% static 'images/pag3.png' %}">
         </div>
 
     </div>
 
-</body>
+{% endblock %}
 
 
 
-</html>

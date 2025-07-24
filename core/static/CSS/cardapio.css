@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica:ital@0;1&family=Lavishly+Yours&display=swap');
 
+body{
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('../images/IndexBanner.jpg');
+    background-repeat: repeat;
+}
+
 .titulo{
     color:rgb(255, 251, 232);
     text-align: left;
@@ -36,8 +42,11 @@
     width: 915px;
     margin:  0 auto;
     margin-bottom: 10px;
+
    
 }
+
+
 
 .container2{
     background-color: rgb(111, 40, 40);
@@ -47,6 +56,10 @@
     margin:  0 auto;
 }
 
+
+.container1, .container2{
+    box-shadow: 5px 0 10px 5px black;
+}
 
 .pag2, .pag3{
     text-align: right;

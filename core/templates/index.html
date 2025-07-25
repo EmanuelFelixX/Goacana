@@ -11,6 +11,20 @@
     <h2>GOACANA</h2>
     <h3>RESTAURANTE REGIONAL</h3>
 </div>
+<div id="contcard" class="reverse">
+    <div class="info">
+        <h1>SOBRE NÓS</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt quis voluptatum molestias illo reiciendis incidunt,
+        nam in, harum quia itaque corrupti. Tempore dolore, a adipisci officia ut assumenda sit laboriosam.</p>
+        <a href="{% url 'cardapio' %}">
+            CONFIRA NOSSO CARDÁPIO
+        </a>
+    </div>
+    <div class="image">
+        <img src="{% static '/images/CardCover.png' %}" id="card">
+        <img src="{% static '/images/CardCover.png' %}" id="card">
+    </div>
+</div>
 <div id="contcard">
     <div class="info">
         <h1>CARDÁPIO</h1>
@@ -25,4 +39,15 @@
         <img src="{% static '/images/CardCover.png' %}" id="card">
     </div>
 </div>
+<div id="contcard">
+    <div class="container-fluid">
+        <div class="row">
+            <h1>PROMOÇÕES</h1>
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
+</div>
+
 {% endblock %}

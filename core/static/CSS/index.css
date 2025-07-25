@@ -101,6 +101,7 @@
     #contcard {
         display: flex;
         justify-content: center;
+        border-bottom: 1px solid black;
         
         .info {
             width: 60%;
@@ -150,4 +151,14 @@
         }
     }
     
+}
+
+/* Coisas extras*/
+
+.reverse {
+    flex-direction: row-reverse !important;
+}
+
+.upside {
+    flex-direction: column !important;
 }

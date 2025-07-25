@@ -36,7 +36,7 @@ body{
 }
 
 .container1{
-    background-color: rgb(111, 40, 40);
+    background-color: #6b1d1d;
     display: flex;
     justify-content: center;
     width: 915px;
@@ -46,21 +46,45 @@ body{
    
 }
 
-
-
 .container2{
-    background-color: rgb(111, 40, 40);
+    background-color: #6b1d1d;
+    justify-content: center;
+    width: 915px;
+    margin:  0 auto;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+   
+}
+
+.container3{
+    background-color: #6b1d1d;
     display: flex;
     justify-content: center;
     width: 915px;
     margin:  0 auto;
+    margin-bottom: 10px;
+    padding-top: 30px;
+
+    
 }
 
+.comidas {
+    display: block;
+    padding: 10px;
+}
 
-.container1, .container2{
+.p-pag3{
+    display: flex;
+}
+
+.container1, .container2, .container3{
     box-shadow: 5px 0 10px 5px black;
 }
 
-.pag2, .pag3{
+.pag2, .pag3, .pag4{
     text-align: right;
+}
+
+.img4{
+    padding-right: 0px;
 }

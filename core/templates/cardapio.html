@@ -2,82 +2,188 @@
 {% load static %}
 
 
-{% block 'header' %} 
+{% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/cardapio.css' %}">
 {% endblock %}
 
 {% block 'content' %}
-    <div class=container1>
-        <div>
+<div class=container1>
+    <div>
 
-            <div class="titulo">pratos</div>
+        <div class="titulo">pratos</div>
 
 
-            <div class="titulo-comidas">
-                CARNE DE <br />
-                CHURRASQUEIRA R$35,00
-
-            </div>
-
-            <div class="detalhes-comidas">
-                Carne Assada (130g) <br />
-                Feijão Preto (165g)<br />
-                Arroz branco (110g)<br />
-                Farofa Comum (77g)<br />
-                Salada Vinagrete (66g) <br />
-
-            </div>
-
-            <div class="titulo-comidas">
-                <br>
-                FRANGO DE <br />
-                CHURRASQUEIRA R$27,00
-
-            </div>
-
-            <div class="detalhes-comidas">
-                Sobrecoxa Assada <br />
-                Feijão Carioca <br />
-                Arroz Refogado <br />
-                Farofa Comum <br />
-                Salada de Maionese <br />
-            </div>
-
-            <div class="titulo-comidas">
-                <br>
-                LINGUIÇA</A> DE <br />
-                CHURRASQUEIRA R$27,00
-
-            </div>
-
-            <div class="detalhes-comidas">
-                Linguiça Assada <br/>
-                Fava Rajada <br/>
-                Arroz Refogado <br/>
-                Farofa Comum <br/>
-                Salada de Maionese <br/>
-                <br>
-                
-
-            </div>
+        <div class="titulo-comidas">
+            CARNE DE <br />
+            CHURRASQUEIRA R$35,00
 
         </div>
 
-        <div class="imagem">
-            <img class="pag2" width="360px" height="1570px" src="{% static 'images/pag2.png' %}">
+        <div class="detalhes-comidas">
+            Carne Assada (130g) <br />
+            Feijão Preto (165g)<br />
+            Arroz branco (110g)<br />
+            Farofa Comum (77g)<br />
+            Salada Vinagrete (66g) <br />
+
+        </div>
+
+        <div class="titulo-comidas">
+            <br>
+            FRANGO DE <br />
+            CHURRASQUEIRA R$27,00
+
+        </div>
+
+        <div class="detalhes-comidas">
+            Sobrecoxa Assada <br />
+            Feijão Carioca <br />
+            Arroz Refogado <br />
+            Farofa Comum <br />
+            Salada de Maionese <br />
+        </div>
+
+        <div class="titulo-comidas">
+            <br>
+            LINGUIÇA</A> DE <br />
+            CHURRASQUEIRA R$27,00
+
+        </div>
+
+        <div class="detalhes-comidas">
+            Linguiça Assada <br />
+            Fava Rajada <br />
+            Arroz Refogado <br />
+            Farofa Comum <br />
+            Salada de Maionese <br />
+            <br>
+
+
         </div>
 
     </div>
 
-    
-    <div class = "container2">
-        <div class="imagem">
-            <img class="pag3" width="915px" height="468.5px" src="{% static 'images/pag3.png' %}">
+    <div class="imagem">
+        <img class="pag2" width="360px" height="1570px" src="{% static 'images/pag2.png' %}">
+    </div>
+
+</div>
+
+
+<div class="container2">
+    <div class="imagem">
+        <img class="pag3" width="915px" height="468.5px" src="{% static 'images/pag3.png' %}">
+    </div>
+
+    <div>
+        <div class="p-pag3">
+            <div class="comidas">
+                <div class="titulo-comidas">
+                    <br>
+                    BAIÃO DE DOIS <br>
+                    CREMOSO R$28,00 <br>
+                </div>
+
+                <div class="detalhes-comidas">
+                    Baião de Dois (385g)<br>
+                    Linguiça de Churrasqueira (88g)<br>
+                    Farofa D’água (83g)<br>
+                    Salada Vinagrete (66g)<br>
+                </div>
+
+
+                <div class="titulo-comidas">
+                    <br>
+                    PEIXE FRITO R$28,00
+                </div>
+
+                <div class="detalhes-comidas">
+                    Peixe frito (176g) <br>
+                    Feijão Carioca (165g) <br>
+                    Arroz Refogado (77g) <br>
+                    Farofa Comum (110g) <br>
+                    Salada de Cenoura e Repolho (88g)<br>
+                </div>
+            </div>
+
+
+            <div class="comidas">
+                <div class="titulo-comidas">
+                    <br>
+                    PEITO DE FRANGO <br>
+                    NA CHAPA R$25,00 <br>
+                </div>
+
+                <div class="detalhes-comidas">
+                    Peito de Frango (143g) <br>
+                    Feijão Carioca (165g) <br>
+                    Arroz Refogado (110g) <br>
+                    Farofa Comum (77g) <br>
+                    Salada de Cenoura e Repolho (66g) <br>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="container3">
+    <div class = "comidas">
+        <div class="titulo-comidas">
+            PANQUECA DE <br>
+            CARNE R$25,00
+
+        </div>
+
+        <div class="detalhes-comidas">
+            Panqueca de Carne <br>
+            Feijão Carioca <br>
+            Arroz Refogado  <br>
+            Farofa Comum <br>
+            Salada Vinagrete <br>
+        </div>
+
+        <div class="titulo-comidas">
+            <br>
+            PANQUECA DE <br>
+            FRANGO R$25,00
+
+        </div>
+
+        <div class="detalhes-comidas">
+            Panqueca de Carne <br>
+            Feijão Carioca <br>
+            Arroz Refogado <br>
+            Farofa Comum <br>
+            Salada Vinagrete <br>
+        </div>
+
+        <div class="titulo-comidas">
+            <br>
+            CARNE DE SOL <br>
+            NA NATA R$28,00
+
+
+        </div>
+
+        <div class="detalhes-comidas">
+            Panqueca de Frango <br>
+            Feijão Carioca <br>
+            Arroz Refogado <br>
+            Farofa Comum <br>
+            Salada Vinagrete <br>
+
+
         </div>
 
     </div>
+
+    <div class="imagem">
+        <img class="pag4" width="421px" height="1000px" src="{% static 'images/pag4.jpg' %}">
+    </div>
+</div>
 
 {% endblock %}
-
-
-

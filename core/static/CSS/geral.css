@@ -43,7 +43,11 @@ body {margin: 0; font-family: "IM Fell English", serif !important;}
     }
 
     #mobi {
+        cursor: pointer;
         display: none;
+        border-radius: 5px;
+        border: 1px solid black;
+        padding: 5px;
     }
 }
 

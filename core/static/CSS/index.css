@@ -199,7 +199,7 @@ body {h1 {text-align: center;}}
 }
 
 /* A partir daqui, serão feitas as adaptações para o mobile */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .banner {
         height: 60vh;
         text-align: center;
@@ -256,8 +256,34 @@ body {h1 {text-align: center;}}
             margin-bottom: 10px;
             font-size: 12px;
         }
+
+        .promo-card {
+            .text-side {
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            p {
+                font-size: 1.1rem !important;
+            }
+        }
+        }
     }
     
+}
+
+@media screen and (max-width: 1000px) {
+    .promo-card{
+        .text-side {
+            h2 {
+                font-size: 1.05rem !important;
+            }
+
+            p {
+                font-size: 0.9rem !important;
+            }
+        }
+    }
 }
 
 /* Coisas extras*/

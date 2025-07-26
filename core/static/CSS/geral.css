@@ -13,7 +13,7 @@ html {
 }
 
 /* Esta parte do código é para o body */
-body {margin: 0; font-family: "IM Fell English", serif !important}
+body {margin: 0; font-family: "IM Fell English", serif !important; overflow-x: hidden;}
 
 /* Esta parte do código é para o navigator (barra superior) */
 .nav {

@@ -11,7 +11,7 @@
     <h2>GOACANA</h2>
     <h3>RESTAURANTE REGIONAL</h3>
 </div>
-<div id="About" class="reverse contcard">
+<div id="About" class="contcard reverse">
     <div class="info">
         <h1>SOBRE NÓS  (Pretendo mudar a foto ao lado depois)</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt quis voluptatum molestias illo reiciendis incidunt,
@@ -21,8 +21,12 @@
         </a>
     </div>
     <div class="image">
-        <img src="{% static '/images/Bolsa.png' %}">
-        <img src="{% static '/images/Bolsa.png' %}">
+        <div class="col-8 col-md-4 col-xxl-3">
+            <img src="{% static '/images/Bolsa.png' %}" class="card2">
+        </div>
+        <div class="col-8 col-md-4 col-xxl-3">
+            <img src="{% static '/images/Bolsa.png' %}" class="card2">
+        </div>
     </div>
 </div>
 <div class="contcard">
@@ -34,7 +38,7 @@
             CONFIRA NOSSO CARDÁPIO
         </a>
     </div>
-    <div class="image row">
+    <div class="image">
         <div class="col-8 col-md-4 col-xxl-3">
             <img src="{% static '/images/CardCover.png' %}" class="card">
         </div>

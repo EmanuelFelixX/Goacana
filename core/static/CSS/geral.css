@@ -3,6 +3,10 @@
 /* Esta parte é dedicada às importações. Se desejar importar fontes, faça aqui */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
+* {
+    box-sizing: border-box !important;
+}
+
 /* Esta parte do código é para o body */
 body {margin: 0; font-family: "IM Fell English", serif !important; overflow-x: hidden;}
 

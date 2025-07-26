@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
 /* Esta parte do código é para o body */
-body {margin: 0; font-family: "IM Fell English", serif !important;}
+body {margin: 0; font-family: "IM Fell English", serif !important; overflow-x: hidden;}
 
 /* Esta parte do código é para o navigator (barra superior) */
 .nav {
@@ -25,9 +25,9 @@ body {margin: 0; font-family: "IM Fell English", serif !important;}
         border-radius: 50%;
     }
 
-    a {
+    a, i {
         text-decoration: none;
-        color: white;
+        color: white !important;
     }
 
     a:hover {
@@ -40,14 +40,14 @@ body {margin: 0; font-family: "IM Fell English", serif !important;}
         justify-self: flex-end;
         font-size: 30px;
         line-height: 30px;
+        border: 1px solid white;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 5px;
     }
 
     #mobi {
-        cursor: pointer;
         display: none;
-        border-radius: 5px;
-        border: 1px solid black;
-        padding: 5px;
     }
 }
 

@@ -1,10 +1,23 @@
 {% load static %}
 <div class="nav">
-        <a href="{% url 'cardapio' %}" ID>CARDÁPIO</a>
+    <div class="main-bar">
+        <a href="{% url 'cardapio' %}" id="card" class="mainlink">CARDÁPIO</a>
         <a href="{% url 'index' %}" id="logo"><img src="{% static '/images/GoacLogo.png' %}" alt="" id="logo"></a>
-        <a href="">CONTATO</a>
-    <a href="" id="login">
-        <i class="fa-solid fa-right-to-bracket"></i>
-    </a>
-    <i class="fa-solid fa-bars" id="mobi"></i>
+        <a href="" class="mainlink">CONTATO</a>
+        <a href="" id="login" class="mainlink">
+            <i class="fa-solid fa-right-to-bracket"></i>
+        </a>
+        <i class="fa-solid fa-bars" id="mobi"></i>
+    </div>
+    <div class="dropdown" id="dpd">
+        <a class="dropdown-content" href="{% url 'cardapio' %}">
+            CARDÁPIO
+        </a>
+        <a class="dropdown-content" href="{% url 'contato' %}">
+            CONTATO
+        </a>
+        <a class="dropdown-content" href="{% url 'index' %}">
+            LOGIN
+        </a>
+    </div>
 </div>

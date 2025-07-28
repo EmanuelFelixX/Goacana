@@ -1,0 +1,297 @@
+/* Estas são as configurações únicas da página index.html */
+
+
+/* Modificações para todos os itens da página */
+body {h1 {text-align: center;}}
+
+/* Modificações do banner principal */
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('IndexBanner.jpg');
+    background-color: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.5);
+
+    h1 {
+        color: rgb(255, 255, 255);
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    h2 {
+        color: rgb(255, 255, 255);
+        font-size: 5rem;
+        margin: 0;
+    }
+
+    h3 {
+        color: rgb(255, 255, 255);
+        font-size: 2rem;
+        margin: 0;
+    }
+}
+
+.contcard {
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+
+    .info {
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        p {
+            width: 80%;
+        }
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0px 10px 0px;
+        width: 40%;
+        background-color: #632727;
+
+        img {
+            height: 300px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .card {
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            rotate: -45deg;
+        }
+
+        .card2 {
+            rotate: 45deg;
+        }
+
+       img:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .promo{
+        height: 250px;
+
+        .promo-card {
+            background-color: #632727;
+            justify-self: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 200px;
+            width: 80%;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+            transition: all 1.5s;
+            display: flex;
+            cursor: pointer;
+            
+            .img-side {
+                width: 36%;
+                border-radius: 5px 0px 0px 5px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text-side {
+                width: 64%;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                border-radius: 0 5px 5px 0;
+
+                h2 {
+                    font-size: 1.3rem;
+                    margin: 0;
+                }
+
+                p {
+                    width: 90%;
+                    font-size: 1rem;
+                    margin: 0;
+                }
+
+                .preco {
+                    z-index: 900;
+                    font-size: 1.3rem;
+                    position: relative;
+                    bottom: -10px;
+                    right: -40px;
+                }
+            }
+
+            .upper {
+                height: 60%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .down {
+                height: 40%;
+                text-align: center;
+            } 
+        }
+
+        .promo-card:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    a {
+        border: 2px solid black;
+        border-radius: 10px;
+        height: 50px;
+        padding: 0 20px;
+        background-color: white;
+        text-decoration: none;
+        color: black;
+        line-height: 50px;
+    }
+
+    .row {
+        h1 {
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+    }
+}
+
+#promo {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(IndexBanner.jpg);
+    color: white;
+}
+
+#nov {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('pag3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+/* A partir daqui, serão feitas as adaptações para o mobile */
+@media screen and (max-width: 767px) {
+    .banner {
+        height: 60vh;
+        text-align: center;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 4rem;
+        }
+    }   
+
+    .contcard   {
+        display: flex;
+        justify-content: center;
+        
+        .info {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            h1 {
+                margin-top: 10px;
+            }
+    
+            p {
+                width: 80%;
+            }
+        }
+    
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0px 10px 0px;
+            width: 40%;
+            background-color: #632727;
+            flex-direction: column;
+    
+            .card {
+                box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+                border-radius: 5px;
+            }
+
+            .card, .card2 {
+                height: 150px;
+            }
+        }
+    
+        a {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .promo-card {
+            .text-side {
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            p {
+                font-size: 1.1rem !important;
+            }
+        }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .promo-card{
+        .text-side {
+            h2 {
+                font-size: 1.05rem !important;
+            }
+
+            p {
+                font-size: 0.9rem !important;
+            }
+        }
+    }
+}
+
+/* Coisas extras*/
+
+.reverse {
+    flex-direction: row-reverse !important;
+}
+
+.upside {
+    flex-direction: column !important;
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica:ital@0;1&family=Lavishly+Yours&display=swap');
+
+body{
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('../images/IndexBanner.jpg');
+    background-repeat: repeat;
+}
+
+.titulo{
+    color:rgb(255, 251, 232);
+    text-align: left;
+    font-family: "Lavishly Yours", cursive;
+    font-style: italic;
+    padding-left: 50px;
+    font-size: 140px;
+    padding-bottom: 20px;
+}
+
+.titulo-comidas{
+    font-family: "IM Fell Double Pica", serif;
+    text-align: left;
+    padding-left: 50px;
+    color: rgb(255, 251, 232);
+    font-size: 42.4px;
+    padding-right: 15px;
+}
+
+.detalhes-comidas{
+    font-family: "IM Fell Double Pica", serif;
+    font-size: 35px;
+    padding-left: 50px;
+    color: rgb(255, 251, 232);
+    padding-top: 10px;
+}
+
+.container1{
+    background-color: #6b1d1d;
+    display: flex;
+    justify-content: center;
+    width: 915px;
+    margin:  0 auto;
+    margin-bottom: 10px;
+
+   
+}
+
+.container2{
+    background-color: #6b1d1d;
+    justify-content: center;
+    width: 915px;
+    margin:  0 auto;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+   
+}
+
+.container3{
+    background-color: #6b1d1d;
+    display: flex;
+    justify-content: center;
+    width: 915px;
+    margin:  0 auto;
+    margin-bottom: 10px;
+    padding-top: 30px;
+
+    
+}
+
+.comidas {
+    display: block;
+    padding: 10px;
+}
+
+.p-pag3{
+    display: flex;
+}
+
+.container1, .container2, .container3{
+    box-shadow: 5px 0 10px 5px black;
+}
+
+.pag2, .pag3, .pag4{
+    text-align: right;
+}
+
+.img4{
+    padding-right: 0px;
+}

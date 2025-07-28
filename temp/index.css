@@ -273,6 +273,12 @@ body {h1 {text-align: center;}}
 }
 
 @media screen and (max-width: 1000px) {
+    #About {
+        img {
+            height: 200px;
+        }
+    }
+
     .promo-card{
         .text-side {
             h2 {

@@ -301,9 +301,9 @@ body {h1 {text-align: center;}}
 }
 
 @media screen and (max-width: 1000px) {
-    #About {
+    #About, #Hor {
         img {
-            height: 200px;
+            height: 200px !important;
         }
     }
 

@@ -15,9 +15,11 @@
 <body>
     <div class="nav">
         <div class="main-bar">
+            <a href="{% url 'cardapio' %}" id="card" class="mainlink">PROMOÇÕES</a>
             <a href="{% url 'cardapio' %}" id="card" class="mainlink">CARDÁPIO</a>
             <a href="{% url 'index' %}" id="logo"><img src="GoacLogo.png" alt="" id="logo"></a>
             <a href="{% url 'contato' %}" class="mainlink">CONTATO</a>
+            <a href="{% url 'contato' %}" class="mainlink">NOVIDADES</a>
             <a href="" id="login" class="mainlink">
                 <i class="fa-solid fa-right-to-bracket"></i>
             </a>
@@ -29,6 +31,12 @@
             </a>
             <a class="dropdown-content" href="{% url 'contato' %}">
                 CONTATO
+            </a>
+            <a class="dropdown-content" href="{% url 'cardapio' %}">
+                PROMOÇÕES
+            </a>
+            <a class="dropdown-content" href="{% url 'contato' %}">
+                NOVIDADES
             </a>
             <a class="dropdown-content" href="{% url 'index' %}">
                 LOGIN
@@ -66,6 +74,63 @@
             <a href="{% url 'cardapio' %}">
                 CONFIRA NOSSO CARDÁPIO
             </a>
+        </div>
+        <div class="image">
+            <div class="col-8 col-md-4 col-xxl-3">
+                <img src="CardCover.png" class="card">
+            </div>
+            <div class="col-8 col-md-4 col-xxl-3">
+                <img src="CardCover.png" class="card">
+            </div>
+        </div>
+    </div>
+    <div class="contcard reverse">
+        <div class="info">
+            <h1>HORÁRIOS</h1>
+            <div class="row">
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">DOMINGO</p>
+                        <p>11:00 - 15:00</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">SEGUNDA</p>
+                        <p>11:00 - 15:00</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">TERÇA</p>
+                        <p>FECHADO</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">QUARTA</p>
+                        <p>11:00 - 15:00</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">QUINTA</p>
+                        <p>11:00 - 15:00</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">SEXTA</p>
+                        <p>11:00 - 15:00</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xxl-3">
+                    <div class="date-card">
+                        <p class="day">SÁBADO</p>
+                        <p>11:00 - 15:00</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="image">
             <div class="col-8 col-md-4 col-xxl-3">

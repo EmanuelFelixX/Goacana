@@ -3,3 +3,47 @@
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
 {% endblock %}
+
+{% block 'content' %}
+<div class="contato-content">
+    <h1>Fale Conosco</h1>
+    
+    
+    <div class="contato-form">
+        <form action="#" method="post">
+            {% csrf_token %}
+
+            <p>
+                Nome:
+                <input type="text" name="nome">
+            </p><br>
+
+            <p>
+                Assunto:
+                <input type="text" name="assunto">
+
+            </p><br>
+
+            <p>
+                Número de telefone:
+                <input type="number" name="telefone">
+
+            </p><br>
+
+            <p>
+                Mensagem:
+                <input type="text" name="mensagem">
+
+            </p><br>
+
+            <p>
+                <input type="submit" value="Enviar" />
+            </p>
+
+
+            
+
+        </form>
+    </div>
+</div>
+{% endblock %}

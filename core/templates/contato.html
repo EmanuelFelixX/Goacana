@@ -8,60 +8,39 @@ Contato
 {% endblock %}
 
 {% block 'content' %}
+<h1>FALE CONOSCO</h1>
 <div class="contato-content">
-    <h1>Fale Conosco</h1>
-    
-    
-    <div class="contato-form">
-        <form action="#" method="post">
+    <form action="#" method="post">
             {% csrf_token %}
-
-            <div class="linha1">
-                <p>
-                    Nome:
-                    <input type="text" name="nome">
-                </p><br>
-            
-            <p>
-                Assunto:
-                <input type="text" name="assunto">
-
-            </p><br>
-
-
-            <p>
-                Email:
-                <input type="text" name="email">
-            </p><br>
+            <div class="row">
+                <div class="campo col-md-6 col-xxl-3">
+                    <label for="nome">NOME:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo col-md-6 col-xxl-3">
+                    <label for="nome">ASSUNTO:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo col-md-6 col-xxl-3">
+                    <label for="nome">TELEFONE:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo col-md-6 col-xxl-3">
+                    <label for="nome">EMAIL:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
             </div>
-                
-
-            <div class="linha2">
-                <p>
-                    Número de telefone:
-                    <input type="number" name="telefone">
-    
-                </p><br>
+            <div class="row">
+                <div class="campo big">
+                    <label for="mensagem">MENSAGEM:</label>
+                    <textarea name="mensagem" id=""></textarea>
+                </div>
             </div>
-            
-
-            <div class="linha3">
-                <p class="mensagem">
-                    Mensagem:
-                    <textarea name="mensagem" rows="6" required></textarea>
-                    
-    
-                </p><br>
+            <div class="row">
+                <div class="campo final">
+                    <input type="submit" id="nome" name="nome" required class="botao" value="ENVIAR">
+                </div>
             </div>
-
-            <p class="botao">
-                <input type="submit" value="Enviar" />
-            </p>
-
-
-            
-
         </form>
-    </div>
 </div>
 {% endblock %}

@@ -74,3 +74,13 @@ form {
     color: white;
 }
 
+/* campo de responsividade */
+@media screen and (max-width: 1400px) {
+    form {
+        .campo {
+            input, label {
+                width: 98% !important;
+            }
+        }
+    }
+}

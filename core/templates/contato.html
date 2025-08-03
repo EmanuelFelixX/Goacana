@@ -1,5 +1,8 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% block 'subtitulo' %}
+Contato
+{% endblock %}
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/contato.css' %}">
 {% endblock %}
@@ -13,30 +16,45 @@
         <form action="#" method="post">
             {% csrf_token %}
 
-            <p>
-                Nome:
-                <input type="text" name="nome">
-            </p><br>
-
+            <div class="linha1">
+                <p>
+                    Nome:
+                    <input type="text" name="nome">
+                </p><br>
+            
             <p>
                 Assunto:
                 <input type="text" name="assunto">
 
             </p><br>
 
-            <p>
-                Número de telefone:
-                <input type="number" name="telefone">
 
+            <p>
+                Email:
+                <input type="text" name="email">
             </p><br>
+            </div>
+                
 
-            <p>
-                Mensagem:
-                <input type="text" name="mensagem">
+            <div class="linha2">
+                <p>
+                    Número de telefone:
+                    <input type="number" name="telefone">
+    
+                </p><br>
+            </div>
+            
 
-            </p><br>
+            <div class="linha3">
+                <p class="mensagem">
+                    Mensagem:
+                    <textarea name="mensagem" rows="6" required></textarea>
+                    
+    
+                </p><br>
+            </div>
 
-            <p>
+            <p class="botao">
                 <input type="submit" value="Enviar" />
             </p>
 

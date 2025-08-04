@@ -11,36 +11,46 @@ Contato
 <h1>FALE CONOSCO</h1>
 <div class="contato-content">
     <form action="#" method="post">
-            {% csrf_token %}
-            <div class="row">
-                <div class="campo col-md-6 col-xxl-3">
-                    <label for="nome">NOME:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="campo col-md-6 col-xxl-3">
-                    <label for="nome">ASSUNTO:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="campo col-md-6 col-xxl-3">
-                    <label for="nome">TELEFONE:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="campo col-md-6 col-xxl-3">
-                    <label for="nome">EMAIL:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
+        {% csrf_token %}
+        <div class="row">
+            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0s">
+                <label for="nome">NOME:</label>
+                <input type="text" id="nome" name="nome"  required>
             </div>
-            <div class="row">
-                <div class="campo big">
-                    <label for="mensagem">MENSAGEM:</label>
-                    <textarea name="mensagem" id=""></textarea>
-                </div>
+            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.1s">
+                <label for="assunto">ASSUNTO:</label>
+                <input type="text" id="assunto" name="assunto"  required>
             </div>
-            <div class="row">
-                <div class="campo final">
-                    <input type="submit" id="nome" name="nome" required class="botao" value="ENVIAR">
-                </div>
+            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.2s">
+                <label for="telefone">TELEFONE:</label>
+                <input type="tel" id="telefone" name="telefone" required>
             </div>
-        </form>
+            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.3s">
+                <label for="email">EMAIL:</label>
+                <input type="email" id="email" name="email"  required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="campo big fade-in" style="animation-delay:0.4s">
+                <label for="mensagem">MENSAGEM:</label>
+                <textarea name="mensagem" id="mensagem" >
+                </textarea>
+            </div>
+        </div>
+
+        <div class="social medias">
+            <a href="https://www.instagram.com/goacanarestaurante/">
+                <img src="{% static 'images/InstagramLogo.png' %}" alt="Instagram" class="icon">
+            </a>
+
+            <a href="https://api.whatsapp.com/send/?phone=558491061685&text&type=phone_number&app_absent=0">
+                <img src="{% static 'images/WhatsappLogo.png' %}" alt="Whatsapp" class="icon">
+                
+            </a>
+        </div>
+            <input type="submit" class="botao" value="ENVIAR">
+        </div>
+    </form>
 </div>
+
 {% endblock %}

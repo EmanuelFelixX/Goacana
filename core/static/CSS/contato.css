@@ -160,3 +160,23 @@ form {
 }
 
 
+.final-part {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.social-medias {
+    display: flex;
+    justify-content:flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.submit-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

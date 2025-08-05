@@ -18,3 +18,6 @@ def admins(request):
 
 def editordecadarpio(request):
     return render(request, 'editordecadarpio.html')
+
+def login(request):
+    return render(request, 'login.html')

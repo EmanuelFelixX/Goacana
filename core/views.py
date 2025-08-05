@@ -15,3 +15,6 @@ def cardapio(request):
 
 def admins(request):
     return render(request, 'admins.html')
+
+def editordecadarpio(request):
+    return render(request, 'editordecadarpio.html')

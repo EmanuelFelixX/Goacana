@@ -12,3 +12,6 @@ def perfil(request):
 
 def cardapio(request):
     return render(request, 'cardapio.html')
+
+def admins(request):
+    return render(request, 'admins.html')

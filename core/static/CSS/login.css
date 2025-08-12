@@ -1,5 +1,87 @@
 .fundologin{
     height: 90vh;
-    background-color: azure;
-
+    background-color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.partebranca{
+    height: 50vh;
+    width: 200%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12x;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0);
+    display: flex;
+    gap: 2rem;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+}
+.fromarea{
+    flex: 1;
+    background-color: rgb(188, 212, 160);
+    margin-bottom: 1.5rem;
+    color: #333;
+    margin-right: 20px;
+}
+.fromarea-input{
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.fromarea-h2{
+    margin-bottom: 1.5rem;
+    font-family: bold ;
+    color: #333;
+}
+label{
+    font-size: 1rem;
+    color: #555;
+    height: 50px;
+    width: 80%;
+}
+button{
+    background-color: #7a9b2f;
+    color: white;
+    justify-content: center;
+    display: flex;align-items: center;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+button:hover{
+    background-color: #6b892a;
+    transform: scale(1.05);
+}
+button:active{
+  transform:scale(0.98);
+}
+.logoarea{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.styleg{
+    font-size: 8rem;
+    color: #7a9b2f;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    .partebranca{
+        flex-direction: column;
+        text-align: center;
+    }
+    .logoarea{
+        margin-bottom: 1rem;
+    }
 }

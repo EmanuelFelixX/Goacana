@@ -24,12 +24,16 @@
     margin-bottom: 1.5rem;
     color: #333;
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
 }
-.fromarea-input{
+
+input{
     width: 100%;
     padding: 0.6rem;
     margin-top: 0.4rem;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 6px;
     font-size: 1rem;
 }
@@ -38,33 +42,35 @@
     font-family: bold ;
     color: #333;
 }
+
 label{
     font-size: 1rem;
     color: #555;
     height: 50px;
     width: 80%;
 }
-button{
+
+.botao {
     background-color: #7a9b2f;
+    width: 300px;
+    align-self: center;
     color: white;
-    justify-content: center;
-    display: flex;align-items: center;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
     margin-top: 1rem;
     transition: background-color 0.3s ease;
 }
-button:hover{
+.botao:hover{
     background-color: #6b892a;
     transform: scale(1.05);
 }
-button:active{
+
+.botao:active{
   transform:scale(0.98);
 }
+
 .logoarea{
     flex: 1;
     display: flex;
@@ -76,6 +82,7 @@ button:active{
     color: #7a9b2f;
     font-weight: bold;
 }
+
 @media (max-width: 768px) {
     .partebranca{
         flex-direction: column;

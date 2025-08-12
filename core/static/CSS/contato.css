@@ -16,7 +16,7 @@ body {
 }
 
 .contato-content {
-    padding: 15px;
+    padding: 90px;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
@@ -62,11 +62,7 @@ form {
     }
 }
 
-.icon {
-    height: 35px;
-    width: 35px;
-    background-color: black;
-}
+
 
 .botao {
     width: 180px !important;
@@ -105,9 +101,11 @@ form {
     border-radius: 8px;
     padding: 5px;
     transition: transform 0.3s;
+    font-size: 30px;
+    color: black;
 }
 
-.icon:hover {
+i:hover {
     transform: scale(1.1);
 }
 

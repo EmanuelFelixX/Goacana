@@ -42,6 +42,11 @@
             gap: 20px;
         }
 
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
         .icon{
             display: flex;
             justify-content: center;

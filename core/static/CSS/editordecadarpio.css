@@ -8,6 +8,10 @@
     background-color: #632727;
 }
 
+.vheight {
+    height: 80vh !important;
+}
+
 .body-card {
     background-color:#7ca81c;
 }

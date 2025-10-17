@@ -7,6 +7,9 @@ def index(request):
 def contato(request):
     return render(request, 'contato.html')
 
+def publicacao (request):
+    return render(request, 'publicacao.html')
+
 def perfil(request):
     return render(request, 'perfil.html')
 

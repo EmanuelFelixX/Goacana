@@ -43,6 +43,10 @@ form {
         width: 90%;
     }
 
+    .solo {
+        width: 98%;
+    }
+
     input {
         height: 40px;
         border-radius: 10px;

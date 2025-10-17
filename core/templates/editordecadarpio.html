@@ -1,5 +1,8 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% block 'subtitulo' %} 
+Editar cardápio
+{% endblock %}
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/editordecadarpio.css' %}">
 {% endblock %}
@@ -25,7 +28,11 @@
             </div>
         </div>
         </form>
-
+        <form id="categorias" method="post">
+            {% csrf_token %}
+            {{ formcat }}
+            <input type="submit" value="Adicionar Categoria">
+        </form>
         <!-- Lista de itens -->
         <div id="lista-cardapio" class="row g-3"></div>
     </div>

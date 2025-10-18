@@ -27,24 +27,31 @@ def editordecadarpio(request):
     return render(request, 'editorcardv2.html', contexto)
 
 def add_prato(request):
-    formcar = TB_PRATOS_FORMS(request.POST or None, request.FILES)
+    if request.method == 'POST':
+        formcar = TB_PRATOS_FORMS(request.POST, request.FILES)
+        if formcar.is_valid():
+            formcar.save()
+            return redirect('editordecadarpio')
+    else:
+        formcar = TB_PRATOS_FORMS() 
+    
     contexto = {'formcar': formcar}
-
-    if formcar.is_valid():
-        formcar.save()
-        return redirect('editordecadarpio')
-
     return render (request, 'newprato.html', contexto)
+
 
 def edit_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
-    formcar = TB_PRATOS_FORMS(request.POST or None, request.FILES ,instance=prato)
+    
+    if request.method == 'POST':
+        formcar = TB_PRATOS_FORMS(request.POST, request.FILES, instance=prato)
+        if formcar.is_valid():
+            formcar.save()
+            return redirect('editordecadarpio')
+        
+    else:
+        formcar = TB_PRATOS_FORMS(instance=prato) 
+    
     contexto = {'formcar': formcar}
-
-    if formcar.is_valid():
-        formcar.save()
-        return redirect('editordecadarpio')
-
     return render (request, 'newprato.html', contexto)
 
 def diponibilidade_prato(request, id):

@@ -27,7 +27,7 @@ def editordecadarpio(request):
     return render(request, 'editorcardv2.html', contexto)
 
 def add_prato(request):
-    formcar = TB_PRATOS_FORMS(request.POST or None)
+    formcar = TB_PRATOS_FORMS(request.POST or None, request.FILES)
     contexto = {'formcar': formcar}
 
     if formcar.is_valid():
@@ -38,7 +38,7 @@ def add_prato(request):
 
 def edit_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
-    formcar = TB_PRATOS_FORMS(request.POST or None, instance=prato)
+    formcar = TB_PRATOS_FORMS(request.POST or None, request.FILES ,instance=prato)
     contexto = {'formcar': formcar}
 
     if formcar.is_valid():
@@ -46,6 +46,16 @@ def edit_prato(request, id):
         return redirect('editordecadarpio')
 
     return render (request, 'newprato.html', contexto)
+
+def diponibilidade_prato(request, id):
+    prato = TB_PRATOS.objects.get(pk=id)
+    if prato.Disponibilidade == True:
+        prato.Disponibilidade = False
+    else:
+        prato.Disponibilidade = True
+    prato.save()
+
+    return redirect('editordecadarpio')
 
 def rem_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)

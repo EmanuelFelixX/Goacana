@@ -32,25 +32,44 @@
     align-items: center;
 
     p {
-        margin: 0 0 0 10px
+        margin: 0 0 0 10px;
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;;
     }
 
     .buttons {
         margin-left: auto;
+        display: flex;
+        align-items: center;
     }
 
     a {
         text-decoration: none;
     }
 
-    button {
+    .pTrue {
+        background-color: rgb(81, 138, 81);
+    }
+
+    .pFalse {
+        background-color: red;
+    }
+
+    .check, button {
+        height: 30px;
+        width: 100px;
+        border-radius: 10px;
         margin-right: 10px;
+        border: 1px solid black;
+    }
+
+    button {
         font-size: 20px;
         line-height: 30px;
-        height: 30px;
         background-color: rgb(81, 138, 81);
         color: white;
-        border-radius: 10px;
     }
 
     .red {
@@ -62,3 +81,12 @@
     transform: scale(1.01);
 }
 
+@media (max-width: 768px) {
+    .partebranca{
+        flex-direction: column;
+        text-align: center;
+    }
+    .logoarea{
+        margin-bottom: 1rem;
+    }
+}

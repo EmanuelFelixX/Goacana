@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +33,8 @@ urlpatterns = [
     path('add_prato/', add_prato, name='add_prato'),
     path('edit_prato/<int:id>/', edit_prato, name='edit_prato'),
     path('rem_prato/<int:id>/', rem_prato, name='rem_prato'),
+    path('disp_prato/<int:id>/', diponibilidade_prato, name='disp_prato'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

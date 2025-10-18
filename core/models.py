@@ -7,6 +7,7 @@ class TB_PRATOS(models.Model):
     Nome = models.CharField(max_length=45, null=False)
     Disponibilidade = models.BooleanField(default=True)
     Preco = models.FloatField(null=False)
+    Imagem = models.ImageField(upload_to='pratos/', null=True, blank=True)
     Categoria = models.ForeignKey('TB_CATEGORIAS', on_delete=models.PROTECT, null=False)
 
 class TB_CATEGORIAS(models.Model):

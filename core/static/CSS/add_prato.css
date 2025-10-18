@@ -28,11 +28,15 @@ body {
 
         > div {
             display: flex;
-            flex-direction: column;;
+            flex-direction: column;
 
             label, input, select {
                 margin: 0 auto;
                 width: 50%
+            }
+
+            label {
+                margin-top: 10px;
             }
         }
     }

@@ -4,7 +4,7 @@ from .models import *
 class TB_PRATOS_FORMS(forms.ModelForm):
     class Meta:
         model = TB_PRATOS
-        fields = ['Nome', 'Preco', 'Categoria']
+        fields = ['Nome', 'Preco', 'Categoria', 'Imagem']
 
 class TB_CATEGORIAS_FORMS(forms.ModelForm):
     class Meta:

@@ -21,6 +21,9 @@ Editar cardápio
             <p>||R$ {{ prato.Preco }}||</p>
             <p>||{{prato.Categoria}}||</p>
             <div class="buttons">
+                <a href="{% url 'disp_prato' prato.id %}">
+                    <div class="check p{{ prato.Disponibilidade}}"></div>
+                </a>
                 <a href="{% url 'edit_prato' prato.id %}">
                     <button>EDITAR</button>
                 </a>

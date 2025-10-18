@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'subtitulo' %} 
+Modificar Prato
+{% endblock %}
+{% block 'header' %}
+<link rel="stylesheet" href="{% static 'CSS/add_prato.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+    <div class="vheight">
+        <div class="card">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="photo-side">
+
+                </div>
+                <div class="data-side">
+                    {{ formcar }}
+                </div>
+                <input type="submit" value="SALVAR" id="save">
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -21,14 +21,36 @@ def admins(request):
     return render(request, 'admins.html')
 
 def editordecadarpio(request):
-    formcar = TB_PRATOS_FORMS(request.POST or None)
-    formcat = TB_CATEGORIAS_FORMS(request.POST or None)
-    contexto = {'formcar': formcar, 'formcat': formcat}
-    if formcat.is_valid():
-        formcat.save()
-        redirect('editordecadarpio')
+    lista_pratos = TB_PRATOS.objects.all()
+    contexto = {'lista_pratos': lista_pratos}
 
-    return render(request, 'editordecadarpio.html', contexto)
+    return render(request, 'editorcardv2.html', contexto)
+
+def add_prato(request):
+    formcar = TB_PRATOS_FORMS(request.POST or None)
+    contexto = {'formcar': formcar}
+
+    if formcar.is_valid():
+        formcar.save()
+        return redirect('editordecadarpio')
+
+    return render (request, 'newprato.html', contexto)
+
+def edit_prato(request, id):
+    prato = TB_PRATOS.objects.get(pk=id)
+    formcar = TB_PRATOS_FORMS(request.POST or None, instance=prato)
+    contexto = {'formcar': formcar}
+
+    if formcar.is_valid():
+        formcar.save()
+        return redirect('editordecadarpio')
+
+    return render (request, 'newprato.html', contexto)
+
+def rem_prato(request, id):
+    prato = TB_PRATOS.objects.get(pk=id)
+    prato.delete()
+    return redirect('editordecadarpio')
 
 def login(request):
     return render(request, 'login.html')

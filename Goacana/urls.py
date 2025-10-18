@@ -27,5 +27,8 @@ urlpatterns = [
     path('admins/', admins, name= 'admins'),
     path('editordecadarpio/', editordecadarpio, name='editordecadarpio'),
     path('login/', login, name='login'),
-    path('publicacao/', publicacao, name='publicacao')
+    path('publicacao/', publicacao, name='publicacao'),
+    path('add_prato/', add_prato, name='add_prato'),
+    path('edit_prato/<int:id>/', edit_prato, name='edit_prato'),
+    path('rem_prato/<int:id>/', rem_prato, name='rem_prato'),
 ]

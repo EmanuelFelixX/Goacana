@@ -11,6 +11,8 @@ class TB_PRATOS(models.Model):
 
 class TB_CATEGORIAS(models.Model):
     Nome = models.CharField(max_length=45)
+    def __str__(self):
+        return self.Nome
 
 
 #Classes dos usuários
@@ -20,18 +22,17 @@ class TB_USUARIOS(models.Model):
     Email = models.CharField(max_length=45, null=False)
     Login = models.CharField(max_length=45, null=False)
     Senha = models.CharField(max_length=45, null=False)
-    N_Acesso = models.ForeignKey('TB_NACCESS', on_delete=models.PROTECT)
-
-class TB_NACCESS (models.Model):
-    Nome = models.CharField(max_length=20)
+    # Permissões para os pratos
     ADD_PRATO = models.BooleanField(default=False)
     MOD_PRATO = models.BooleanField(default=False)
     REM_PRATO = models.BooleanField(default=False)
 
+    # Permissões para as publicações
     ADD_PUBLI = models.BooleanField(default=False)
     MOD_PUBLI = models.BooleanField(default=False)
     REM_PUBLI = models.BooleanField(default=False)
 
+    # Permissões para os destaques
     ADD_DESTA = models.BooleanField(default=False)
     REM_DESTA = models.BooleanField(default=False)
 

@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -51,3 +53,14 @@ class TB_HISTORICO(models.Model):
     Usuario = models.ForeignKey('TB_USUARIOS', on_delete=models.PROTECT)
     Acao = models.CharField(max_length=50)
     Data = models.DateTimeField()
+
+# Funções para apagar imagens associadas aos pratos e publicações quando seus respectivos registros forem apagados
+@receiver(post_delete, sender=TB_PRATOS)
+def apagar_im_prato(sender, instance, **kwargs):
+    if instance.Imagem:
+        instance.Imagem.delete(False)
+
+@receiver(post_delete, sender=TB_IMAGENS)
+def apagar_im_pub(sender, instance, **kwargs):
+    if instance.Imagem:
+        instance.Imagem.delete(False)

@@ -13,9 +13,9 @@
 }
 
 .vheight {
-    min-height: 80vh !important;
+    min-height: 80vh;
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
     align-items: center;
     row-gap: 20px;
     margin-bottom: 10px;
@@ -82,11 +82,5 @@
 }
 
 @media (max-width: 768px) {
-    .partebranca{
-        flex-direction: column;
-        text-align: center;
-    }
-    .logoarea{
-        margin-bottom: 1rem;
-    }
+   
 }

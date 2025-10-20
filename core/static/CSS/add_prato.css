@@ -13,9 +13,16 @@ body {
     height: 500px;
     background-color: white;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
 
     form {
-        display: flex;    
+        display: flex;
+
+        input, select {
+            height: 40px;
+            border-radius: 10px;
+        }
     }
 
     .photo-side {

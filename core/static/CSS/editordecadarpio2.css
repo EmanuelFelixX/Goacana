@@ -13,7 +13,8 @@
 }
 
 .vheight {
-    min-height: 80vh;
+    min-height: 85
+    vh;
     display: flex;
     flex-direction: column;
     align-items: center;

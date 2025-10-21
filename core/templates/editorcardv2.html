@@ -17,6 +17,11 @@ Editar cardápio
     </div>
     {% for prato in lista_pratos %}
         <div class="prato">
+            {% if produto.Imagem %}
+                <img src="{{ prato.Imagem.url }}" alt="{{ produto.Nome }}">
+            {% else %}
+                <img src="{% static 'images/placeholder.png' %}" alt="Nenhuma imagem disponível">
+            {% endif %}
             <p>||{{ prato.Nome }}||</p>
             <p>||R$ {{ prato.Preco }}||</p>
             <p>||{{prato.Categoria}}||</p>

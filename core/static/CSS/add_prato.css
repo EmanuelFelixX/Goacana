@@ -28,6 +28,14 @@ body {
     .photo-side {
         width: 40%;
         height: 60%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 350px;
+            width: 350px;
+            border-radius: 10px;
+        }
     }
 
     .data-side {
@@ -59,4 +67,20 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .card {
+        height: 750px
+    }
 
+    form {
+        flex-direction: column;
+
+        .data-side, .photo-side {
+            width: 100% !important;
+
+            input, select, label {
+                width: 85% !important;
+            }
+        }
+    }
+}

@@ -13,8 +13,7 @@
 }
 
 .vheight {
-    min-height: 85
-    vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,10 +26,22 @@
     width: 90%;
     border: 2px solid black;
     border-radius: 5px;
-    height: 50px;
+    height: 200px;
     font-size: 30px;
     line-height: 50px;
     align-items: center;
+
+    img {
+        height: 150px;
+        width: 150px;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin-left: 10px;
+    }
+
+    .info {
+        
+    }
 
     p {
         margin: 0 0 0 10px;
@@ -80,8 +91,4 @@
 
 .prato:hover {
     transform: scale(1.01);
-}
-
-@media (max-width: 768px) {
-   
 }

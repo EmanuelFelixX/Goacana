@@ -32,6 +32,7 @@
     align-items: center;
     padding-bottom: 10px;
     width: 70%;
+    border: 1px solid black;
 
     .field {
         width: 100%;
@@ -76,7 +77,7 @@ label{
 }
 .botao:hover{
     background-color: #6b892a;
-    transform: scale(1.05);
+    transform: scale(1.035);
 }
 
 .botao:active{
@@ -89,6 +90,7 @@ label{
     justify-content: center;
     align-items: center;
 }
+
 .styleg{
     font-size: 8rem;
     color: #7a9b2f;

@@ -11,7 +11,11 @@ class TB_PRATOS(models.Model):
     Preco = models.FloatField(null=False)
     Imagem = models.ImageField(upload_to='pratos/', null=True, blank=True)
     Categoria = models.ForeignKey('TB_CATEGORIAS', on_delete=models.PROTECT, null=False)
-    Acompanhamentos = models.ManyToManyField('TB_ACOMPANHAMENTOS', blank=True)
+
+class TB_ACOMPANHAMENTOS(models.Model):
+    Nome = models.CharField(max_length=45, null=False)
+    Quantidade = models.FloatField(max_length=45, null=False)
+    ID_Prato = models.ForeignKey('TB_PRATOS', null=False, on_delete=models.PROTECT)
 
 class TB_CATEGORIAS(models.Model):
     Nome = models.CharField(max_length=45)

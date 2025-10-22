@@ -22,7 +22,8 @@ def admins(request):
 
 def editordecadarpio(request):
     lista_pratos = TB_PRATOS.objects.all()
-    contexto = {'lista_pratos': lista_pratos}
+    lista_categorias = TB_CATEGORIAS.objects.all()
+    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias}
 
     return render(request, 'editorcardv2.html', contexto)
 

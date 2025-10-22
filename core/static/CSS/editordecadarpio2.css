@@ -3,12 +3,20 @@
     margin-top: 75px;
     display: flex;
 
-    button, a {
-        height: 46.4px;
+
+    .up-button {
         margin-left: auto;
-        background-color: rgb(81, 138, 81);
-        color: white;
-        border-radius: 10px;
+        display: flex;
+        column-gap: 5px;
+
+        button, a {
+            height: 46.4px;
+            background-color: rgb(81, 138, 81);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            width: 120px;
+        }
     }
 }
 
@@ -19,6 +27,23 @@
     align-items: center;
     row-gap: 20px;
     margin-bottom: 10px;
+
+    .cat-seq {
+        margin-top: 100px;
+        position: fixed;
+        width: 50%;
+        height: 300px;
+        border-radius: 10px;
+        background-color: lightgreen;
+        overflow-y: scroll;
+        display: none;
+
+        h3 {
+            text-align: center;
+            border-radius: 10px 0px 0 0;
+            background-color: rgb(81, 138, 81);
+        }
+    }
 }
 
 .prato {
@@ -39,16 +64,30 @@
         margin-left: 10px;
     }
 
-    .info {
-        
-    }
+    .infos{
+        display: flex;
+        margin-left: 10px;
+        column-gap: 10px;
 
-    p {
-        margin: 0 0 0 10px;
-        max-width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;;
+        .info {
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 100px;
+            width: 200px;
+            text-align: center;
+
+            h3 {
+                background-color: rgb(184, 231, 58);
+                border-radius: 5px 5px 0 0;
+            }
+
+            p {
+                max-width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;;
+            }
+        }
     }
 
     .buttons {
@@ -91,4 +130,55 @@
 
 .prato:hover {
     transform: scale(1.01);
+}
+
+
+@media (max-width: 1260px) {
+    .prato {
+        flex-direction: column;
+        height: auto;
+        row-gap: 10px;
+
+        img {
+            margin-top: 10px;
+        }
+
+        .infos {
+            transform: scale(0.8);
+            margin-left: 0 !important;
+        }   
+    }
+
+    .buttons {
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 570px) {
+    .prato {
+        .infos {
+            transform: scale(0.65) !important;
+        }
+    }   
+}
+
+@media (max-width: 500px) {
+    .prato {
+
+        .infos {
+            transform: scale(0.8) !important;
+            flex-direction: column;
+            row-gap: 10px;
+            width: 100%;
+
+            .info {
+                width: 100%;
+
+                p {
+                    max-width: 100%;
+                    font-size: 30px;
+                }
+            }
+        }
+    }   
 }

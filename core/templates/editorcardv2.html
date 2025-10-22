@@ -5,26 +5,41 @@ Editar cardápio
 {% endblock %}
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/editordecadarpio2.css' %}">
+<script src="{% static 'JS/editcard.js' %}" defer></script>
 {% endblock %}
 
 {% block 'content' %}
 <div class="vheight">
     <div class="titulo">
         <h2>Editor de Cardápio</h2>
-        <a href="{% url 'add_prato' %}">
-            <button>ADICIONAR</button>
-        </a>
+        <div class="up-button">
+            <button id="butones">CATEGORIAS</button>
+            <a href="{% url 'add_prato' %}">
+                <button>ADICIONAR</button>
+            </a>
+        </div>
     </div>
     {% for prato in lista_pratos %}
         <div class="prato">
-            {% if produto.Imagem %}
+            {% if prato.Imagem %}
                 <img src="{{ prato.Imagem.url }}" alt="{{ produto.Nome }}">
             {% else %}
                 <img src="{% static 'images/placeholder.png' %}" alt="Nenhuma imagem disponível">
             {% endif %}
-            <p>||{{ prato.Nome }}||</p>
-            <p>||R$ {{ prato.Preco }}||</p>
-            <p>||{{prato.Categoria}}||</p>
+            <div class="infos">
+                <div class="info">
+                    <h3>PRATO</h3>
+                    <p>{{ prato.Nome }}</p>
+                </div>
+                <div class="info">
+                    <h3>CATEGORIA</h3>
+                    <p>{{ prato.Categoria }}</p>
+                </div>
+                <div class="info">
+                    <h3>PREÇO</h3>
+                    <p>R$ {{ prato.Preco }}</p>
+                </div>
+            </div>
             <div class="buttons">
                 <a href="{% url 'disp_prato' prato.id %}">
                     <div class="check p{{ prato.Disponibilidade}}"></div>
@@ -38,5 +53,11 @@ Editar cardápio
             </div>
         </div>
     {% endfor %}
+    <div class="cat-seq" id="menes">
+        <h3>CATEGORIAS</h3>
+        {% for cat in lista_categorias %}
+            <p>{{ cat.Nome }}</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

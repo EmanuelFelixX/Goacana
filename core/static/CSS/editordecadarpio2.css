@@ -29,9 +29,9 @@
     margin-bottom: 10px;
 
     .cat-seq {
-        margin-top: 100px;
+        margin-top: 200px;
         position: fixed;
-        width: 50%;
+        width: 80%;
         height: 300px;
         border-radius: 10px;
         background-color: lightgreen;
@@ -40,13 +40,14 @@
         border: 1px solid black;
 
         h3 {
+            color: white;
             text-align: center;
             border-radius: 10px 0px 0 0;
             background-color: rgb(81, 138, 81);
         }
 
         .cat-item {
-            height: 44px;
+            min-height: 44px;
             width: 90%;
             margin: 0 auto;
             border: 1px solid black;
@@ -67,9 +68,19 @@
                 background-color: green;
             }
 
+            #id_Nome {
+                background-color: white !important;
+            }
+
             button {
                 background-color: red;
                 border-radius: 5px;
+            }
+
+            #gray {
+                background-color: gray !important;
+                margin-left: auto;
+                margin-right: 10px;
             }
         }
     }
@@ -135,19 +146,31 @@
 
     .pFalse {
         background-color: red;
+
+        .toggle {
+            margin-left: auto;
+        }
     }
 
     .check, button {
-        height: 30px;
+        height: 50px;
         width: 100px;
         border-radius: 10px;
         margin-right: 10px;
         border: 1px solid black;
+
+        .toggle {
+            height: 48px;
+            width: 50px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
     }
 
     button {
         font-size: 20px;
-        line-height: 30px;
+        line-height: 50px;
         background-color: rgb(81, 138, 81);
         color: white;
     }
@@ -184,11 +207,38 @@
 }
 
 @media (max-width: 570px) {
+    .up-button, .buttons {
+        transform: scale(0.9) !important;
+    }
+
     .prato {
         .infos {
             transform: scale(0.65) !important;
         }
-    }   
+    }
+
+    #add {
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            label {
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        input, a {
+            margin-left: 0;
+            margin-right: 0px;
+            margin-bottom: 10px;
+        }
+    }
 }
 
 @media (max-width: 500px) {

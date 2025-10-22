@@ -42,7 +42,9 @@ Editar cardápio
             </div>
             <div class="buttons">
                 <a href="{% url 'disp_prato' prato.id %}">
-                    <div class="check p{{ prato.Disponibilidade}}"></div>
+                    <div class="check p{{ prato.Disponibilidade}}">
+                        <div class="toggle"></div>
+                    </div>
                 </a>
                 <a href="{% url 'edit_prato' prato.id %}">
                     <button>EDITAR</button>
@@ -58,15 +60,19 @@ Editar cardápio
         {% for cat in lista_categorias %}
             <div class="cat-item">
                 <p>{{ cat.Nome }}</p>
-                <a href="{% url 'rem_cat' cat.id %}">
-                    <button>APAGAR</button>
-                </a>
+                {% if cat in active %}
+                    <button id="gray">IND.</button>
+                {% else %}
+                    <a href="{% url 'rem_cat' cat.id %}">
+                        <button>APAGAR</button>
+                    </a>
+                {% endif %}
             </div>
         {% endfor %}
-        <form class="cat-item" method="post">
+        <form class="cat-item" method="post" id="add">
             {% csrf_token %}
             {{ formcat }}
-            <input type="submit" value="Adicionar Categoria">
+            <input type="submit" value="ADICIONAR">
         </form>
     </div>
 </div>

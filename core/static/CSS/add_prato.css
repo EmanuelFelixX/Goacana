@@ -9,6 +9,7 @@ body {
 
 .card {
     margin: 0 auto;
+    margin-bottom: 12px;
     width: 90%;
     height: 500px;
     background-color: white;
@@ -77,6 +78,10 @@ body {
 
         .data-side, .photo-side {
             width: 100% !important;
+
+            img {
+                transform: scale(0.8) !important;
+            }
 
             input, select, label {
                 width: 85% !important;

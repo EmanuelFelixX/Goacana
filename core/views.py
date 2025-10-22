@@ -23,8 +23,10 @@ def admins(request):
 def editordecadarpio(request):
     lista_pratos = TB_PRATOS.objects.all()
     lista_categorias = TB_CATEGORIAS.objects.all()
+    categoria_ids = TB_PRATOS.objects.filter(pk__in=[p.pk for p in lista_pratos]).values_list('Categoria_id', flat=True)
+    act_cat = TB_CATEGORIAS.objects.filter(pk__in=categoria_ids)
     formcat = TB_CATEGORIAS_FORMS(request.POST or None)
-    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias, 'formcat': formcat}
+    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias, 'formcat': formcat, 'active': act_cat}
     
     if formcat.is_valid():
         formcat.save()

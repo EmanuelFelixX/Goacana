@@ -5,6 +5,7 @@ Contato
 {% endblock %}
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/contato.css' %}">
+<script src="{%  static 'JS/contato.js' %}" defer></script>
 {% endblock %}
 
 {% block 'content' %}
@@ -23,11 +24,11 @@ Contato
             </div>
             <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.2s">
                 <label for="telefone">TELEFONE:</label>
-                <input type="tel" id="telefone" name="telefone" required>
+                <input type="tel" id="telefone" name="telefone">
             </div>
             <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.3s">
                 <label for="email">EMAIL:</label>
-                <input type="email" id="email" name="email"  required>
+                <input type="email" id="email" name="email">
             </div>
         </div>
         <div class="row">
@@ -50,7 +51,7 @@ Contato
             </div>
             
             <div class="submit-center">
-                <input type="submit" class="botao" value="ENVIAR">
+                <input type="button" class="botao" value="ENVIAR" onclick="enviarWhats()">
 
             </div>
             
@@ -59,5 +60,7 @@ Contato
         </div>
     </form>
 </div>
+
+
 
 {% endblock %}

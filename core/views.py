@@ -23,8 +23,13 @@ def admins(request):
 def editordecadarpio(request):
     lista_pratos = TB_PRATOS.objects.all()
     lista_categorias = TB_CATEGORIAS.objects.all()
-    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias}
-
+    formcat = TB_CATEGORIAS_FORMS(request.POST or None)
+    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias, 'formcat': formcat}
+    
+    if formcat.is_valid():
+        formcat.save()
+        return redirect('editordecadarpio')
+    
     return render(request, 'editorcardv2.html', contexto)
 
 def add_prato(request):
@@ -68,6 +73,11 @@ def diponibilidade_prato(request, id):
 def rem_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
     prato.delete()
+    return redirect('editordecadarpio')
+
+def rem_cat(request, id):
+    cat = TB_CATEGORIAS.objects.get(pk=id)
+    cat.delete()
     return redirect('editordecadarpio')
 
 def login(request):

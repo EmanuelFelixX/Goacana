@@ -56,8 +56,18 @@ Editar cardápio
     <div class="cat-seq" id="menes">
         <h3>CATEGORIAS</h3>
         {% for cat in lista_categorias %}
-            <p>{{ cat.Nome }}</p>
+            <div class="cat-item">
+                <p>{{ cat.Nome }}</p>
+                <a href="{% url 'rem_cat' cat.id %}">
+                    <button>APAGAR</button>
+                </a>
+            </div>
         {% endfor %}
+        <form class="cat-item" method="post">
+            {% csrf_token %}
+            {{ formcat }}
+            <input type="submit" value="Adicionar Categoria">
+        </form>
     </div>
 </div>
 {% endblock %}

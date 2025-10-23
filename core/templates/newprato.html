@@ -5,6 +5,7 @@ Modificar Prato
 {% endblock %}
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/add_prato.css' %}">
+<script src="{% static 'JS/editcard.js' %}" defer></script>
 {% endblock %}
 
 {% block 'content' %}
@@ -14,12 +15,29 @@ Modificar Prato
                 {% csrf_token %}
                 <div class="photo-side">
                     <img src="{% static 'images/placeholder.png' %}" alt="">
-                    <button class="acomp">ACOMPANHAMENTOS</button>
+                    <div class="acomp {{ sit }}" id="butones">ACOMPANHAMENTOS</div>
                 </div>
                 <div class="data-side">
                     {{ formcar }}
                 </div>
                 <input type="submit" value="SALVAR" id="save">
+            </form>
+        </div>
+        <div class="acomp-seq" id="menes">
+            <h3>ACOMPANHAMENTOS</h3>
+            {% for acomp in lista_acomp %}
+                <div class="acomp-item">
+                    <p>{{ acomp.Nome }}</p>
+                    <p>{{ acomp.Quantidade }}g</p>
+                    <a href="">
+                        <button>APAGAR</button>
+                    </a>
+                </div>
+            {% endfor %}
+            <form class="acomp-item" method="post" id="add">
+                {% csrf_token %}
+                {{ formacomp }}
+                <input type="submit" value="ADICIONAR">
             </form>
         </div>
     </div>

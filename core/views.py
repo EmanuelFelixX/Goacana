@@ -41,9 +41,9 @@ def add_prato(request):
             formcar.save()
             return redirect('editordecadarpio')
     else:
-        formcar = TB_PRATOS_FORMS() 
+        formcar = TB_PRATOS_FORMS()
     
-    contexto = {'formcar': formcar}
+    contexto = {'formcar': formcar, 'sit': 'False'}
     return render (request, 'newprato.html', contexto)
 
 
@@ -56,10 +56,27 @@ def edit_prato(request, id):
             formcar.save()
             return redirect('editordecadarpio')
         
+        formacomp = TB_ACOMPANHAMENTOS_FORMS(request.POST)
+        if formacomp.is_valid():
+            acomp = formacomp.save(commit=False)
+            acomp.ID_Prato_id = id
+            acomp.save()
+            return redirect('edit_prato', id=id)
+        
+        lista_acomp = TB_ACOMPANHAMENTOS.objects.filter(ID_Prato_id=id)
+        
     else:
-        formcar = TB_PRATOS_FORMS(instance=prato) 
+        formcar = TB_PRATOS_FORMS(instance=prato)
+        formacomp = TB_ACOMPANHAMENTOS_FORMS()
+        if formacomp.is_valid():
+            acomp = formacomp.save(commit=False)
+            acomp.ID_Prato_id = id
+            acomp.save()
+            return redirect('edit_prato', id=id)
+        
+        lista_acomp = TB_ACOMPANHAMENTOS.objects.filter(ID_Prato_id=id)
     
-    contexto = {'formcar': formcar}
+    contexto = {'formcar': formcar, 'formacomp': formacomp, 'lista_acomp': lista_acomp}
     return render (request, 'newprato.html', contexto)
 
 def diponibilidade_prato(request, id):

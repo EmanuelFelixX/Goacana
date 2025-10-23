@@ -5,6 +5,69 @@ body {
 .vheight {
     margin-top: 100px;
     min-height: 80vh !important;
+    display: flex;
+    justify-content: center;
+
+    .acomp-seq {
+        margin-top: 50px;
+        position: fixed;
+        width: 80%;
+        height: 300px;
+        border-radius: 10px;
+        background-color: lightgreen;
+        overflow-y: scroll;
+        display: none;
+        border: 1px solid black;
+
+        h3 {
+            color: white;
+            text-align: center;
+            border-radius: 10px 0px 0 0;
+            background-color: rgb(81, 138, 81);
+        }
+
+        .acomp-item {
+            min-height: 44px;
+            width: 90%;
+            margin: 0 auto;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+
+            p, label {
+                line-height: 42px;
+                margin: 0 0 0 10px;
+            }
+
+            input, a {
+                margin-left: auto;
+                margin-right: 10px;
+                border-radius: 5px;
+                background-color: green;
+            }
+
+            #id_Nome, #id_Quantidade {
+                background-color: white !important;
+            }
+
+            #id_Quantidade {
+                width: 60px !important;
+            }
+
+            button {
+                background-color: red;
+                border-radius: 5px;
+            }
+
+            #gray {
+                background-color: gray !important;
+                margin-left: auto;
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 .card {
@@ -40,6 +103,15 @@ body {
             border-radius: 10px;
             background-color: green;
             color: white;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .False {
+            display: none;
         }
 
         img {

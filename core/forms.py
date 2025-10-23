@@ -14,4 +14,4 @@ class TB_CATEGORIAS_FORMS(forms.ModelForm):
 class TB_ACOMPANHAMENTOS_FORMS(forms.ModelForm):
     class Meta:
         model = TB_ACOMPANHAMENTOS
-        fields = ['Nome']
+        fields = ['Nome', 'Quantidade']

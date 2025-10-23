@@ -113,102 +113,30 @@ Restaurante Regional
             <h1>DESTAQUES</h1>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 col-xxl-4 promo">
+            {% for prato in lista_destaques %}
+                <div class="col-12 col-md-6 col-xxl-4 promo">
                 <div class="promo-card">
                     <div class="img-side">
-                        <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
+                        {% if prato.Imagem %}
+                            <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
+                        {% else %}
+                            <img src="{% static 'images/placeholder.png' %}" alt="">
+                        {% endif %}
                     </div>
                     <div class="text-side">
-                        <h2>Peito de Frango na Chapa</h2>
-                        <p>Acompanhamento1 (xxg)</p>
-                        <p>Acompanhamento2 (xxg)</p>
-                        <p>Acompanhamento3 (xxg)</p>
-                        <p>Acompanhamento4 (xxg)</p>
-                        <p>Acompanhamento5 (xxg)</p>
-                        <h1 class="preco">X,yz</h1>
+                        <h2>{{ prato.Nome }}</h2>
+                        {% for acomp in acomps %}
+                            {% if acomp.ID_Prato_id == prato.id %}
+                                <p>{{ acomp.Nome }} ({{acomp.Quantidade}}g)</p>
+                            {% endif %}
+                        {% endfor %}
+                        <h1 class="preco">R$ {{prato.Preco}}</h1>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xxl-4 promo">
-                <div class="promo-card">
-                    <div class="img-side">
-                        <img src="{% static '/images/pag2.jpg' %}" alt="Novidade 1">
-                    </div>
-                    <div class="text-side">
-                        <h2>Peito de Frango na Chapa</h2>
-                        <p>Acompanhamento1 (xxg)</p>
-                        <p>Acompanhamento2 (xxg)</p>
-                        <p>Acompanhamento3 (xxg)</p>
-                        <p>Acompanhamento4 (xxg)</p>
-                        <p>Acompanhamento5 (xxg)</p>
-                        <h1 class="preco">X,yz</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xxl-4 promo">
-                <div class="promo-card">
-                    <div class="img-side">
-                        <img src="{% static '/images/pag2.jpg' %}" alt="Novidade 1">
-                    </div>
-                    <div class="text-side">
-                        <h2>Peito de Frango na Chapa</h2>
-                        <p>Acompanhamento1 (xxg)</p>
-                        <p>Acompanhamento2 (xxg)</p>
-                        <p>Acompanhamento3 (xxg)</p>
-                        <p>Acompanhamento4 (xxg)</p>
-                        <p>Acompanhamento5 (xxg)</p>
-                        <h1 class="preco">X,yz</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xxl-4 promo">
-                <div class="promo-card">
-                    <div class="img-side">
-                        <img src="{% static '/images/pag2.jpg' %}" alt="Novidade 1">
-                    </div>
-                    <div class="text-side">
-                        <h2>Peito de Frango na Chapa</h2>
-                        <p>Acompanhamento1 (xxg)</p>
-                        <p>Acompanhamento2 (xxg)</p>
-                        <p>Acompanhamento3 (xxg)</p>
-                        <p>Acompanhamento4 (xxg)</p>
-                        <p>Acompanhamento5 (xxg)</p>
-                        <h1 class="preco">X,yz</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xxl-4 promo">
-                <div class="promo-card">
-                    <div class="img-side">
-                        <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
-                    </div>
-                    <div class="text-side">
-                        <h2>Peito de Frango na Chapa</h2>
-                        <p>Acompanhamento1 (xxg)</p>
-                        <p>Acompanhamento2 (xxg)</p>
-                        <p>Acompanhamento3 (xxg)</p>
-                        <p>Acompanhamento4 (xxg)</p>
-                        <p>Acompanhamento5 (xxg)</p>
-                        <h1 class="preco">X,yz</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xxl-4 promo">
-                <div class="promo-card">
-                    <div class="img-side">
-                        <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
-                    </div>
-                    <div class="text-side">
-                        <h2>Peito de Frango na Chapa</h2>
-                        <p>Acompanhamento1 (xxg)</p>
-                        <p>Acompanhamento2 (xxg)</p>
-                        <p>Acompanhamento3 (xxg)</p>
-                        <p>Acompanhamento4 (xxg)</p>
-                        <p>Acompanhamento5 (xxg)</p>
-                        <h1 class="preco">X,yz</h1>
-                    </div>
-                </div>
-            </div>
+            {% empty %}
+            <h2>nenhum prato em destaque no momento</h2>
+            {% endfor %}
         </div>
     </div>
 </div>

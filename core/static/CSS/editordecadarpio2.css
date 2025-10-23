@@ -134,6 +134,17 @@
         margin-left: auto;
         display: flex;
         align-items: center;
+
+        .tick {
+            color: black;
+            font-size: 10px;
+            text-align: center;
+            p {
+                margin: 0;
+                line-height: 15px;
+                width: 100px;
+            }
+        }
     }
 
     a {
@@ -185,7 +196,7 @@
 }
 
 
-@media (max-width: 1260px) {
+@media (max-width: 1400px) {
     .prato {
         flex-direction: column;
         height: auto;
@@ -208,7 +219,7 @@
 
 @media (max-width: 570px) {
     .up-button, .buttons {
-        transform: scale(0.9) !important;
+        transform: scale(0.8) !important;
     }
 
     .prato {

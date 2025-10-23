@@ -3,7 +3,11 @@ from .forms import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    dest = TB_PRATOS.objects.filter(Destaque=True)
+    acomp =  TB_ACOMPANHAMENTOS.objects.all()
+    contexto = {'lista_destaques': dest, 'acomps': acomp}
+
+    return render(request, 'index.html', contexto)
 
 def contato(request):
     return render(request, 'contato.html')
@@ -16,6 +20,9 @@ def perfil(request):
 
 def cardapio(request):
     return render(request, 'cardapio.html')
+
+def cardv2 (request):
+    return render (request, 'cardv2.html')
 
 def admins(request):
     return render(request, 'admins.html')
@@ -85,6 +92,16 @@ def diponibilidade_prato(request, id):
         prato.Disponibilidade = False
     else:
         prato.Disponibilidade = True
+    prato.save()
+
+    return redirect('editordecadarpio')
+
+def destaque_prato (request, id):
+    prato = TB_PRATOS.objects.get(pk=id)
+    if prato.Destaque == True:
+        prato.Destaque = False
+    else:
+        prato.Destaque = True
     prato.save()
 
     return redirect('editordecadarpio')

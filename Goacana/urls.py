@@ -26,6 +26,7 @@ urlpatterns = [
     path('contato/', contato, name='contato'),
     path('perfil/', perfil, name='perfil'),
     path('cardapio/', cardapio, name = 'cardapio'),
+    path('cardv2', cardv2, name='cardv2'),
     path('admins/', admins, name= 'admins'),
     path('editordecadarpio/', editordecadarpio, name='editordecadarpio'),
     path('login/', login, name='login'),
@@ -34,6 +35,7 @@ urlpatterns = [
     path('edit_prato/<int:id>/', edit_prato, name='edit_prato'),
     path('rem_prato/<int:id>/', rem_prato, name='rem_prato'),
     path('disp_prato/<int:id>/', diponibilidade_prato, name='disp_prato'),
+    path('dest_prato/<int:id>/', destaque_prato, name='dest_prato'),
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
     path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
 ]

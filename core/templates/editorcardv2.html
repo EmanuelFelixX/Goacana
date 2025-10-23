@@ -41,7 +41,14 @@ Editar cardápio
                 </div>
             </div>
             <div class="buttons">
-                <a href="{% url 'disp_prato' prato.id %}">
+                <a href="{% url 'dest_prato' prato.id %}" class="tick">
+                    <p>EM DESTAQUE</p>
+                    <div class="check p{{ prato.Destaque}}">
+                        <div class="toggle"></div>
+                    </div>
+                </a>
+                <a href="{% url 'disp_prato' prato.id %}" class="tick">
+                    <p>DISPONÍVEL</p>
                     <div class="check p{{ prato.Disponibilidade}}">
                         <div class="toggle"></div>
                     </div>

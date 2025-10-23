@@ -29,7 +29,7 @@ Modificar Prato
                 <div class="acomp-item">
                     <p>{{ acomp.Nome }}</p>
                     <p>{{ acomp.Quantidade }}g</p>
-                    <a href="">
+                    <a href="{% url 'rem_acomp' acomp.id %}">
                         <button>APAGAR</button>
                     </a>
                 </div>

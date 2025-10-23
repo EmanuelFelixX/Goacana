@@ -15,7 +15,7 @@ class TB_PRATOS(models.Model):
 class TB_ACOMPANHAMENTOS(models.Model):
     Nome = models.CharField(max_length=45, null=False)
     Quantidade = models.IntegerField(null=False)
-    ID_Prato = models.ForeignKey('TB_PRATOS', on_delete=models.PROTECT, null=False)
+    ID_Prato = models.ForeignKey('TB_PRATOS', on_delete=models.CASCADE, null=False)
 
 class TB_CATEGORIAS(models.Model):
     Nome = models.CharField(max_length=45)
@@ -26,7 +26,7 @@ class TB_CATEGORIAS(models.Model):
 class TB_USUARIOS(models.Model):
     Nome =  models.CharField(max_length=45, null=False)
     CPF = models.CharField(max_length=11, null=False, primary_key=True)
-    Email = models.CharField(max_length=45, null=False)
+    Email = models.EmailField(max_length=45, null=False)
     Login = models.CharField(max_length=45, null=False)
     Senha = models.CharField(max_length=45, null=False)
     # Permissões para os pratos

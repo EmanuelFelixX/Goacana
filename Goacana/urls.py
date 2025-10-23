@@ -35,6 +35,7 @@ urlpatterns = [
     path('rem_prato/<int:id>/', rem_prato, name='rem_prato'),
     path('disp_prato/<int:id>/', diponibilidade_prato, name='disp_prato'),
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
+    path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
 ]
 
 if settings.DEBUG:

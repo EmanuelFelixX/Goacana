@@ -72,7 +72,7 @@ def edit_prato(request, id):
             acomp = formacomp.save(commit=False)
             acomp.ID_Prato_id = id
             acomp.save()
-            return redirect('edit_prato', id=id)
+            return redirect('edit_prato', id)
         
         lista_acomp = TB_ACOMPANHAMENTOS.objects.filter(ID_Prato_id=id)
     
@@ -98,6 +98,12 @@ def rem_cat(request, id):
     cat = TB_CATEGORIAS.objects.get(pk=id)
     cat.delete()
     return redirect('editordecadarpio')
+
+def rem_acomp (request, id):
+    acomp = TB_ACOMPANHAMENTOS.objects.get(pk=id)
+    prato_id = acomp.ID_Prato_id
+    acomp.delete()
+    return redirect('edit_prato', prato_id)
 
 def login(request):
     return render(request, 'login.html')

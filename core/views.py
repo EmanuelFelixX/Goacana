@@ -22,7 +22,13 @@ def cardapio(request):
     return render(request, 'cardapio.html')
 
 def cardv2 (request):
-    return render (request, 'cardv2.html')
+    lista_pratos = TB_PRATOS.objects.all()
+    lista_cat = TB_CATEGORIAS.objects.all()
+    acomp = TB_ACOMPANHAMENTOS.objects.all
+
+    contexto = {'lista_pratos': lista_pratos, 'lista_cat': lista_cat, 'acomp': acomp}
+
+    return render (request, 'cardv2.html', contexto)
 
 def admins(request):
     return render(request, 'admins.html')

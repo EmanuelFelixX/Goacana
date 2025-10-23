@@ -4,9 +4,33 @@
 Cardápio
 {% endblock %}
 {% block 'header' %}
-<link rel="stylesheet" href="{% static 'CSS/cardapio.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/cardapiodos.css' %}">
 {% endblock %}
 
 {% block 'content' %}
-
+<div class="titulo-principal">NOSSO CARDÁPIO</div>
+{% for cat in lista_cat %}
+    <div class="container1">
+        <div class="info-side">
+            <div class="titulo">{{ cat.Nome }}</div>
+            {% for prato in lista_pratos %}
+                {% if prato.Categoria_id == cat.id %}
+                    <div class="comida">
+                        <div class="titulo-comidas">{{ prato.Nome }}</div>
+                        <div class="detalhes-comidas">
+                            {% for acomp in acomp %}
+                                {% if acomp.ID_Prato_id == prato.id %}
+                                    <p>{{ acomp.Nome }} ({{ acomp.Quantidade }}g)</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="imagem">
+            <img class="pag2" width="400px" height="1800px" src="{% static 'images/pag2.jpg' %}">
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}

@@ -135,20 +135,20 @@ body {h1 {text-align: center;}}
             transform: scale(1.0001);
             
             .img-side {
-                width: 36%;
-                border-radius: 5px 5px 5px 5px;
+                width: 40%;
+                border-radius: 5px;
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
                 img {
-                    width: 100%;
+                    width: 90%;border-radius: 5px;
                 }
             }
 
             .text-side {
-                width: 64%;
+                width: 60%;
                 justify-content: center;
                 align-items: center;
                 display: flex;

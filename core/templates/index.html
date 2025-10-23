@@ -117,7 +117,7 @@ Restaurante Regional
                 <div class="promo-card">
                     <div class="img-side">
                         {% if prato.Imagem %}
-                            <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
+                            <img src="{{ prato.Imagem.url }}" alt="Novidade 1">
                         {% else %}
                             <img src="{% static 'images/placeholder.png' %}" alt="">
                         {% endif %}

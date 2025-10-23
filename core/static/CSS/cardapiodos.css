@@ -30,23 +30,27 @@ body {
 .comida {
     max-height: 500px;
     min-width: 500px;
+    padding-left: 10px;
+    margin-bottom: 20px;
 }
 
 .titulo-comidas {
     font-family: "IM Fell Double Pica", serif;
     text-align: left;
-    padding-left: 50px;
     color: rgb(255, 251, 232);
-    font-size: 60px;
-    padding-right: 15px;
+    font-size: 50px;
+    display: flex;
+
+    p {
+        margin-left: auto;
+        margin-right: 15px;
+    }
 }
 
 .detalhes-comidas {
     font-family: "IM Fell Double Pica", serif;
     font-size: 35px;
-    padding-left: 50px;
     color: rgb(255, 251, 232);
-    padding-top: 10px;
     width: 100%;
 }
 

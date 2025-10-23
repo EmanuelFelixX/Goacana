@@ -22,11 +22,12 @@ def cardapio(request):
     return render(request, 'cardapio.html')
 
 def cardv2 (request):
-    lista_pratos = TB_PRATOS.objects.all()
+    lista_pratos = TB_PRATOS.objects.filter(Disponibilidade=True)
+    lista_cat_pratos = TB_PRATOS.objects.all().values_list('Categoria_id', flat=True)
     lista_cat = TB_CATEGORIAS.objects.all()
     acomp = TB_ACOMPANHAMENTOS.objects.all
 
-    contexto = {'lista_pratos': lista_pratos, 'lista_cat': lista_cat, 'acomp': acomp}
+    contexto = {'lista_pratos': lista_pratos, 'lista_cat': lista_cat, 'acomp': acomp, 'active': lista_cat_pratos}
 
     return render (request, 'cardv2.html', contexto)
 

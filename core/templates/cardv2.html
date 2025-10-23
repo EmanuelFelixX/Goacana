@@ -10,13 +10,14 @@ Cardápio
 {% block 'content' %}
 <div class="titulo-principal">NOSSO CARDÁPIO</div>
 {% for cat in lista_cat %}
+    {% if cat.id in active %}
     <div class="container1">
         <div class="info-side">
             <div class="titulo">{{ cat.Nome }}</div>
             {% for prato in lista_pratos %}
                 {% if prato.Categoria_id == cat.id %}
                     <div class="comida">
-                        <div class="titulo-comidas">{{ prato.Nome }}</div>
+                        <div class="titulo-comidas">{{ prato.Nome }} <p>R${{ prato.Preco }}</p></div>
                         <div class="detalhes-comidas">
                             {% for acomp in acomp %}
                                 {% if acomp.ID_Prato_id == prato.id %}
@@ -32,5 +33,6 @@ Cardápio
             <img class="pag2" width="400px" height="1800px" src="{% static 'images/pag2.jpg' %}">
         </div>
     </div>
+    {% endif %}
 {% endfor %}
 {% endblock %}

@@ -17,7 +17,7 @@ Cardápio
             {% for prato in lista_pratos %}
                 {% if prato.Categoria_id == cat.id %}
                     <div class="comida">
-                        <div class="titulo-comidas">{{ prato.Nome }} <p>R${{ prato.Preco }}</p></div>
+                        <div class="titulo-comidas">{{ prato.Nome }}<p>R${{ prato.Preco }}</p></div>
                         <div class="detalhes-comidas">
                             {% for acomp in acomp %}
                                 {% if acomp.ID_Prato_id == prato.id %}

@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from django.core.mail import send_mail
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -23,7 +25,7 @@ def cardapio(request):
 
 def cardv2 (request):
     lista_pratos = TB_PRATOS.objects.filter(Disponibilidade=True)
-    lista_cat_pratos = TB_PRATOS.objects.all().values_list('Categoria_id', flat=True)
+    lista_cat_pratos = TB_PRATOS.objects.filter(Disponibilidade=True).values_list('Categoria_id', flat=True)
     lista_cat = TB_CATEGORIAS.objects.all()
     acomp = TB_ACOMPANHAMENTOS.objects.all
 
@@ -63,6 +65,7 @@ def add_prato(request):
 
 def edit_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
+    img_prato = TB_PRATOS.objects.filter(pk=id)
     
     if request.method == 'POST':
         formcar = TB_PRATOS_FORMS(request.POST, request.FILES, instance=prato)
@@ -90,7 +93,7 @@ def edit_prato(request, id):
         
         lista_acomp = TB_ACOMPANHAMENTOS.objects.filter(ID_Prato_id=id)
     
-    contexto = {'formcar': formcar, 'formacomp': formacomp, 'lista_acomp': lista_acomp}
+    contexto = {'formcar': formcar, 'formacomp': formacomp, 'lista_acomp': lista_acomp, 'img_prato': img_prato}
     return render (request, 'newprato.html', contexto)
 
 def diponibilidade_prato(request, id):
@@ -131,3 +134,14 @@ def rem_acomp (request, id):
 
 def login(request):
     return render(request, 'login.html')
+
+def send_my_email(request):
+    send_mail(
+        'This is the Subject',                         # subject
+        'This is the plain-text message body.',        # message
+        'goacanarestauranteregional@gmail.com',        # from_email
+        ['emanuellvitor500@gmail.com'],                # recipient_list
+        fail_silently=False,
+    )
+
+    return redirect('contato')

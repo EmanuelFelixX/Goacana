@@ -14,7 +14,13 @@ Modificar Prato
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="photo-side">
-                    <img src="{% static 'images/placeholder.png' %}" alt="">
+                    {% for img in img_prato %}
+                        {% if img.Imagem.url %}
+                            <img src="{{ img.Imagem.url }}" alt="">
+                        {% endif %}
+                    {% empty %}
+                        <img src="{% static 'images/placeholder.png' %}" alt="">
+                    {% endfor %}
                     <div class="acomp {{ sit }}" id="butones">ACOMPANHAMENTOS</div>
                 </div>
                 <div class="data-side">

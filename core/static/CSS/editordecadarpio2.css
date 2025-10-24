@@ -132,8 +132,9 @@
 
     .buttons {
         margin-left: auto;
-        display: flex;
+        display: grid;
         align-items: center;
+        grid-template-columns: 25% 25% 25% 25%;
 
         .tick {
             color: black;
@@ -252,8 +253,15 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 490px) {
     .prato {
+
+        .buttons {
+           transform: scale(1.0) !important;
+           grid-template-columns: 50% 50% !important;
+           row-gap: 10px;
+           margin-bottom: 10px !important;
+        }
 
         .infos {
             transform: scale(0.8) !important;

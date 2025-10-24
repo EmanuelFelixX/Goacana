@@ -1,6 +1,8 @@
 .grid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+    row-gap: 20px;
+    column-gap: 20px;
 }
 
 .container1 {
@@ -84,7 +86,7 @@
     .container1 {
         height: auto !important;
 
-        .conj {
+        .grid {
             transform: scale(0.8);
         }
     }
@@ -96,6 +98,7 @@
         margin: 80px 0px 10px 0px !important;
 
         .imagem {
+            padding-right: 0 !important;
             margin-top: 10px;
             border-right: 0 !important;
             border-bottom: 1px solid black;

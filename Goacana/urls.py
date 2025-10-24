@@ -38,7 +38,7 @@ urlpatterns = [
     path('dest_prato/<int:id>/', destaque_prato, name='dest_prato'),
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
     path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
-    path('envia_email/', send_my_email, name='envia_email'),
+    path('envia_email/', send_my_email, name='envia_email'), #apenas ativar no computador final
 ]
 
 if settings.DEBUG:

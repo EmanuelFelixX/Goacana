@@ -135,7 +135,7 @@ def rem_acomp (request, id):
 def login(request):
     return render(request, 'login.html')
 
-def send_my_email(request):
+# def send_my_email(request): função desativada de email -> ativar apenas no computador final
     send_mail(
         'This is the Subject',                         # subject
         'This is the plain-text message body.',        # message

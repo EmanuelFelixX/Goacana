@@ -59,6 +59,10 @@ class TB_HISTORICO(models.Model):
     Acao = models.CharField(max_length=50)
     Data = models.DateTimeField()
 
+class TB_NEWSLETTER(models.Model):
+    Email = models.EmailField(max_length=254)
+    Status = models.BooleanField(default=True)
+
 # Funções para apagar imagens associadas aos pratos e publicações quando seus respectivos registros forem apagados
 @receiver(post_delete, sender=TB_PRATOS)
 def apagar_im_prato(sender, instance, **kwargs):

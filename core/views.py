@@ -5,9 +5,10 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
+    formnew = TB_NEWSLETTER_FORMS(request.POST or None)
     dest = TB_PRATOS.objects.filter(Destaque=True)
     acomp =  TB_ACOMPANHAMENTOS.objects.all()
-    contexto = {'lista_destaques': dest, 'acomps': acomp}
+    contexto = {'lista_destaques': dest, 'acomps': acomp, 'newsform': formnew}
 
     return render(request, 'index.html', contexto)
 

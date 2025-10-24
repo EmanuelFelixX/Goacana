@@ -134,7 +134,7 @@ Restaurante Regional
                 </div>
             </div>
             {% empty %}
-            <h2>nenhum prato em destaque no momento</h2>
+            <h2 class='empty' >Nenhum prato em destaque no momento</h2>
             {% endfor %}
         </div>
     </div>
@@ -158,5 +158,16 @@ Restaurante Regional
         </div>
     </div>
 </div>
-
+<div class="contcard" id="nov">
+    <div class="container-fluid">
+        <div class="row">
+            <h1>NEWSLETTER</h1>
+        </div>
+        <form method="post" id="form">
+            {% csrf_token %}
+            {{ newsform }}
+            <button type="submit">CADASTRAR</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

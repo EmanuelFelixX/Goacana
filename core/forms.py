@@ -15,3 +15,8 @@ class TB_ACOMPANHAMENTOS_FORMS(forms.ModelForm):
     class Meta:
         model = TB_ACOMPANHAMENTOS
         fields = ['Nome', 'Quantidade']
+
+class TB_NEWSLETTER_FORMS(forms.ModelForm):
+    class Meta:
+        model = TB_NEWSLETTER
+        fields = ['Email']

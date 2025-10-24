@@ -220,9 +220,15 @@ body {h1 {text-align: center;}}
 }
 
 #promo {
+    min-height: 300px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url('../images/IndexBanner.jpg');
     color: white;
+
+    .empty {
+        text-align: center;
+        line-height: 300px;
+    }
 }
 
 #nov {
@@ -231,6 +237,28 @@ body {h1 {text-align: center;}}
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+}
+
+#form {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    > div{
+        width: 100%;
+    }
+
+    input {
+        height: 50px;
+        width: 87%;
+        border-radius: 10px;
+    }
+
+    label {
+        font-size: 30px;
+    }
 }
 
 /* A partir daqui, serão feitas as adaptações para o mobile */

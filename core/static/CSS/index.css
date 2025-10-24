@@ -231,7 +231,10 @@ body {h1 {text-align: center;}}
 
     .empty {
         text-align: center;
-        line-height: 300px;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -333,14 +336,20 @@ body {h1 {text-align: center;}}
 
         .promo-card {
             .text-side {
-            h2 {
-                font-size: 1.1rem !important;
-            }
+                h2 {
+                    font-size: 1.1rem !important;
+                }
 
-            p {
-                font-size: 1.1rem !important;
+                p {
+                    font-size: 1.1rem !important;
+                }
             }
         }
+
+        #form {
+            button {
+                margin-top: 43px !important;
+            }
         }
     }
     

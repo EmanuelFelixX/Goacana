@@ -5,7 +5,7 @@ function enviarWhats(){
     const usertel = document.getElementById('telefone').value;
     const useremail = document.getElementById('email').value;
     const telefone = '558491061685';
-    const mensagem = `Olá, meu nome é ${nome}. Gostaria de falar sobre ${assunto}. ${msg}. Para contato, pode utilizar o número ${usertel} ou o email ${useremail}.`;
+    const mensagem = `Olá, meu nome é ${nome}. Gostaria de falar sobre ${assunto}. ${msg}. Para contato, pode utilizar o número ${usertel} ou o email ${useremail}. Atenciosamente, ${nome}.`;
     const msgFormatada = encodeURIComponent(mensagem);
     const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
     window.open(url, '_blank');

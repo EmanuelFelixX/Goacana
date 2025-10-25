@@ -9,11 +9,12 @@ body {
 }
 
 .titulo {
+    width: 615px;
     color: rgb(255, 251, 232);
     text-align: left;
     font-family: "Lavishly Yours", cursive;
     font-style: italic;
-    padding-left: 50px;
+    padding-left: 75px;
     font-size: 140px;
     padding-bottom: 20px;
 }
@@ -28,15 +29,15 @@ body {
 }
 
 .comida {
-    max-height: 500px;
     min-width: 500px;
-    padding-left: 10px;
+    margin-left: 75px;
     margin-bottom: 20px;
 }
 
 .titulo-comidas {
     font-family: "IM Fell Double Pica", serif;
     text-align: left;
+    height: auto;
     color: rgb(255, 251, 232);
     font-size: 42px;
     display: flex;
@@ -62,11 +63,9 @@ body {
     background-color: #6b1d1d;
     display: flex;
     justify-content: center;
-    width: 915px;
     margin: 0 auto;
     margin-bottom: 10px;
-
-
+    width: 915px;
 }
 
 .container2 {
@@ -89,39 +88,13 @@ body {
     padding-bottom: 20px;
 }
 
-.comidas {
-    display: block;
-    width: 100%;
-
-}
-
-.p-pag3 {
-    display: flex;
-}
-
-.container1,
-.container2,
-.container3 {
-    box-shadow: 5px 0 10px 5px black;
-}
-
-.pag2,
-.pag3,
-.pag4 {
-    text-align: right;
-}
-
-.pag4 {
-    padding-right: 0px;
-}
-
-.img4 {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-
-}
-
 .div-com-imagem{
     display: block;
+}
+
+
+@media screen and (max-width:1050px) {
+    .container1, .container2, .container3 {
+        transform: scale(0.8);
+    }
 }

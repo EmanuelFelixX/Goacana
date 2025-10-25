@@ -15,11 +15,11 @@ Modificar Prato
                 {% csrf_token %}
                 <div class="photo-side">
                     {% for img in img_prato %}
-                        {% if img.Imagem.url %}
+                        {% if img.Imagem %}
                             <img src="{{ img.Imagem.url }}" alt="">
+                        {% else %}
+                            <img src="{% static 'images/placeholder.png' %}" alt="">
                         {% endif %}
-                    {% empty %}
-                        <img src="{% static 'images/placeholder.png' %}" alt="">
                     {% endfor %}
                     <div class="acomp {{ sit }}" id="butones">ACOMPANHAMENTOS</div>
                 </div>

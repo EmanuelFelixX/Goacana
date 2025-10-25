@@ -2,12 +2,17 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.core.mail import send_mail
 from django.http import HttpResponse
+import random
 
 # Create your views here.
 def index(request):
     formnew = TB_NEWSLETTER_FORMS(request.POST or None)
     dest = TB_PRATOS.objects.filter(Destaque=True)
     acomp =  TB_ACOMPANHAMENTOS.objects.all()
+    if formnew.is_valid():
+        formnew.save()
+        return redirect('index')
+
     contexto = {'lista_destaques': dest, 'acomps': acomp, 'newsform': formnew}
 
     return render(request, 'index.html', contexto)

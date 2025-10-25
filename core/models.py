@@ -9,7 +9,7 @@ class TB_PRATOS(models.Model):
     Nome = models.CharField(max_length=45, null=False)
     Disponibilidade = models.BooleanField(default=True)
     Destaque = models.BooleanField(default=False)
-    Preco = models.FloatField(null=False)
+    Preco = models.DecimalField(null=False, decimal_places=2, max_digits=6)
     Imagem = models.ImageField(upload_to='pratos/', null=True, blank=True)
     Categoria = models.ForeignKey('TB_CATEGORIAS', on_delete=models.PROTECT, null=False)
 

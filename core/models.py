@@ -20,6 +20,7 @@ class TB_ACOMPANHAMENTOS(models.Model):
 
 class TB_CATEGORIAS(models.Model):
     Nome = models.CharField(max_length=45)
+    Ordem = models.IntegerField()
     def __str__(self):
         return self.Nome
 

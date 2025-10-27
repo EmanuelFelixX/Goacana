@@ -32,10 +32,13 @@ def cardapio(request):
 def cardv2 (request):
     lista_pratos = TB_PRATOS.objects.filter(Disponibilidade=True)
     lista_cat_pratos = TB_PRATOS.objects.filter(Disponibilidade=True).values_list('Categoria_id', flat=True)
-    lista_cat = TB_CATEGORIAS.objects.all()
+    lista_cat = TB_CATEGORIAS.objects.all().order_by('Ordem')
     acomp = TB_ACOMPANHAMENTOS.objects.all
-
-    contexto = {'lista_pratos': lista_pratos, 'lista_cat': lista_cat, 'acomp': acomp, 'active': lista_cat_pratos}
+    randomn = []
+    for cat in lista_cat:
+        randomn.append(random.randint(1,3))
+    
+    contexto = {'lista_pratos': lista_pratos, 'lista_cat': lista_cat, 'acomp': acomp, 'active': lista_cat_pratos, 'aleatorio': randomn}
 
     return render (request, 'cardv2.html', contexto)
 
@@ -44,16 +47,35 @@ def admins(request):
 
 def editordecadarpio(request):
     lista_pratos = TB_PRATOS.objects.all()
-    lista_categorias = TB_CATEGORIAS.objects.all()
+    lista_categorias = TB_CATEGORIAS.objects.all().order_by('Ordem')
     categoria_ids = TB_PRATOS.objects.filter(pk__in=[p.pk for p in lista_pratos]).values_list('Categoria_id', flat=True)
     act_cat = TB_CATEGORIAS.objects.filter(pk__in=categoria_ids)
-    formcat = TB_CATEGORIAS_FORMS(request.POST or None)
-    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias, 'formcat': formcat, 'active': act_cat}
+
+    if request.method == 'POST':
+        formcat = TB_CATEGORIAS_FORMS(request.POST or None)
+        if formcat.is_valid():
+            formcat.save()
+            return redirect('editordecadarpio')
     
-    if formcat.is_valid():
-        formcat.save()
-        return redirect('editordecadarpio')
+    if request.method == 'GET':
+        formcat = TB_CATEGORIAS_FORMS()
     
+    contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias, 'formcat': formcat, 'active': act_cat, 'sit': 'none'}
+    return render(request, 'editorcardv2.html', contexto)
+
+def edit_cat(request, id):
+    categoria = TB_CATEGORIAS.objects.get(pk=id)
+
+    if request.method == 'POST':
+        formcat = TB_CATEGORIAS_FORMS(request.POST, instance=categoria)
+        if formcat.is_valid():
+            formcat.save()
+            return redirect('editordecadarpio')
+    
+    else:
+        formcat = TB_CATEGORIAS_FORMS(instance=categoria)
+
+    contexto = {'formcat': formcat, 'sit': 'block'}
     return render(request, 'editorcardv2.html', contexto)
 
 def add_prato(request):
@@ -91,11 +113,6 @@ def edit_prato(request, id):
     else:
         formcar = TB_PRATOS_FORMS(instance=prato)
         formacomp = TB_ACOMPANHAMENTOS_FORMS()
-        if formacomp.is_valid():
-            acomp = formacomp.save(commit=False)
-            acomp.ID_Prato_id = id
-            acomp.save()
-            return redirect('edit_prato', id)
         
         lista_acomp = TB_ACOMPANHAMENTOS.objects.filter(ID_Prato_id=id)
     

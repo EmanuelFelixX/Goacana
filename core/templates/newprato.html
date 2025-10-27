@@ -20,6 +20,8 @@ Modificar Prato
                         {% else %}
                             <img src="{% static 'images/placeholder.png' %}" alt="">
                         {% endif %}
+                    {% empty %}
+                        <img src="{% static 'images/placeholder.png' %}" alt="">
                     {% endfor %}
                     <div class="acomp {{ sit }}" id="butones">ACOMPANHAMENTOS</div>
                 </div>

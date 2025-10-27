@@ -9,7 +9,7 @@ class TB_PRATOS_FORMS(forms.ModelForm):
 class TB_CATEGORIAS_FORMS(forms.ModelForm):
     class Meta:
         model = TB_CATEGORIAS
-        fields = ['Nome']
+        fields = ['Nome', 'Ordem']
 
 class TB_ACOMPANHAMENTOS_FORMS(forms.ModelForm):
     class Meta:

@@ -56,19 +56,32 @@
             display: flex;
             align-items: center;
 
+            a {
+                text-decoration: none;
+            }
+
+            .cat-but {
+                margin-left: auto;
+                display: flex;
+                column-gap: 1px;
+                
+                .loveofGod {
+                    background-color: green;
+                }
+            }
+
             p, label {
                 line-height: 42px;
                 margin: 0 0 0 10px;
             }
 
             input, a {
-                margin-left: auto;
                 margin-right: 10px;
                 border-radius: 5px;
                 background-color: green;
             }
 
-            #id_Nome {
+            #id_Nome, #id_Ordem {
                 background-color: white !important;
             }
 
@@ -83,6 +96,10 @@
                 margin-right: 10px;
             }
         }
+    }
+
+    .True {
+        display: block !important;
     }
 }
 

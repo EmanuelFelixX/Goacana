@@ -33,6 +33,7 @@ urlpatterns = [
     path('publicacao/', publicacao, name='publicacao'),
     path('add_prato/', add_prato, name='add_prato'),
     path('edit_prato/<int:id>/', edit_prato, name='edit_prato'),
+    path('edit_cat/<int:id>/', edit_cat, name='edit_cat'),
     path('rem_prato/<int:id>/', rem_prato, name='rem_prato'),
     path('disp_prato/<int:id>/', diponibilidade_prato, name='disp_prato'),
     path('dest_prato/<int:id>/', destaque_prato, name='dest_prato'),

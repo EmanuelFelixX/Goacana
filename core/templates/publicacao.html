@@ -4,7 +4,7 @@
 Publicação
 {% endblock %}
 {% block 'header' %}
-<link rel="stylesheet" href="{% static 'CSS/contato.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/publicacao.css' %}">
 {% endblock %}
 
 {% block 'content' %}
@@ -12,31 +12,8 @@ Publicação
 <div class="contato-content">
     <form action="#" method="post">
         {% csrf_token %}
-        <div class="row">
-            <div class="campo col-md-12 col-xxl-12 fade-in" style="animation-delay:0s">
-                <label class="solo" for="nome">TÍTULO:</label>
-                <input type="text" id="nome" class="solo" name="nome"  required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="campo big fade-in" style="animation-delay:0.4s">
-                <label for="mensagem">MENSAGEM:</label>
-                <textarea name="mensagem" id="mensagem"></textarea>
-            </div>
-        </div>
-        <div class="final-part">
-            <div class="social-medias">
-                <a href="https://www.instagram.com/goacanarestaurante/">
-                    <i class="fa-brands fa-instagram icon"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send/?phone=558491061685&text&type=phone_number&app_absent=0">
-                    <i class="fa-brands fa-whatsapp icon"></i>
-                </a>
-            </div>
-            <div class="submit-center">
-                <input type="submit" class="botao" value="ENVIAR">
-            </div>
-        </div>
+        {{ publiform }}
+        <input class="botao" type="submit" value="CADASTRAR">
     </form>
 </div>
 

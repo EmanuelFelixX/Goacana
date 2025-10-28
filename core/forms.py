@@ -20,3 +20,8 @@ class TB_NEWSLETTER_FORMS(forms.ModelForm):
     class Meta:
         model = TB_NEWSLETTER
         fields = ['Email']
+
+class TB_PUBLICACOES_FORMS(forms.ModelForm):
+    class Meta:
+        model = TB_PUBLICACOES
+        fields = ['Titulo', 'Texto']

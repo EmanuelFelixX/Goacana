@@ -9,11 +9,12 @@ def index(request):
     formnew = TB_NEWSLETTER_FORMS(request.POST or None)
     dest = TB_PRATOS.objects.filter(Destaque=True)
     acomp =  TB_ACOMPANHAMENTOS.objects.all()
+    publi = TB_PUBLICACOES.objects.all()
     if formnew.is_valid():
         formnew.save()
         return redirect('index')
 
-    contexto = {'lista_destaques': dest, 'acomps': acomp, 'newsform': formnew}
+    contexto = {'lista_destaques': dest, 'acomps': acomp, 'publi': publi, 'newsform': formnew}
 
     return render(request, 'index.html', contexto)
 
@@ -21,7 +22,13 @@ def contato(request):
     return render(request, 'contato.html')
 
 def publicacao (request):
-    return render(request, 'publicacao.html')
+    publiform = TB_PUBLICACOES_FORMS(request.POST or None)
+    if publiform.is_valid():
+        publiform.save()
+        redirect('index')
+
+    contexto = {'publiform': publiform}
+    return render(request, 'publicacao.html', contexto)
 
 def perfil(request):
     return render(request, 'perfil.html')

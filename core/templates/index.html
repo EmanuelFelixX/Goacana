@@ -144,21 +144,21 @@ Restaurante Regional
         <div class="row">
             <h1>NOVIDADES</h1>
         </div>
+        <div class="row">
         {% for publi in publi %}
-            <div class="row">
-                <div class="col-12 col-md-6 col-xxl-4 promo">
-                    <div class="promo-card upside">
-                        <div class="upper">
-                            <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
-                        </div>
-                        <div class="down">
-                            <h2>{{ publi.Titulo }}</h2>
-                            <p>{{ publi.Texto }}</p>
-                        </div>
+            <div class="col-12 col-md-6 col-xxl-4 promo">
+                <div class="promo-card upside">
+                    <div class="upper">
+                        <img src="{% static '/images/pag4.jpg' %}" alt="Novidade 1">
+                    </div>
+                    <div class="down">
+                        <h2>{{ publi.Titulo }}</h2>
+                        <p>{{ publi.Texto }}</p>
                     </div>
                 </div>
             </div>
         {% endfor %}
+        </div>
     </div>
 </div>
 <div class="contcard" id="nov">

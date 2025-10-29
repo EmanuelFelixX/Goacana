@@ -10,11 +10,18 @@ Publicação
 {% block 'content' %}
 <h1>ESCREVER PUBLICACAO</h1>
 <div class="contato-content">
-    <form action="#" method="post">
-        {% csrf_token %}
-        {{ publiform }}
-        <input class="botao" type="submit" value="CADASTRAR">
-    </form>
+    <div class="form-div">
+        <form name="publi_form" method="post">
+            {% csrf_token %}
+            {{ publiform }}
+            <input class="botao" type="submit" value="CADASTRAR">
+        </form>
+        <form name="publi_form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ img_form }}
+            <input class="botao" type="submit" value="CADASTRAR IMAGEM">
+        </form>
+    </div>
 </div>
 
 {% endblock %}

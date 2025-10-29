@@ -124,13 +124,14 @@ body {h1 {text-align: center;}}
 
     .promo{
         height: 250px;
+        margin-bottom: 20px;
 
         .promo-card {
             background-color: #632727;
             justify-self: center;
             border: 1px solid black;
             border-radius: 5px;
-            height: 220px;
+            height: 250px;
             width: 80%;
             box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
             transition: all 1.5s;
@@ -194,13 +195,18 @@ body {h1 {text-align: center;}}
             }
 
             .down {
-                height: 40%;
                 text-align: center;
+
+                p {
+                    height: 50px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             } 
         }
 
         .promo-card:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
     }
 
@@ -223,8 +229,8 @@ body {h1 {text-align: center;}}
     }
 }
 
-#promo {
-    min-height: 300px;
+#promo, #nov {
+    min-height: 350px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url('../images/IndexBanner.jpg');
     color: white;

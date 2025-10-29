@@ -30,6 +30,29 @@ def publicacao (request):
     contexto = {'publiform': publiform}
     return render(request, 'publicacao.html', contexto)
 
+def edit_publi(request, id):
+    publi = TB_PUBLICACOES.objects.get(pk=id)
+
+    if request.method == 'POST':
+        img_form = TB_IMAGENS_FORMS(request.POST, request.FILES)
+        if img_form.is_valid():
+            inst = img_form.save(commit=False)
+            inst.ID_Publicacao_id = id
+            inst.save()
+            return redirect('index')
+
+        publiform = TB_PUBLICACOES_FORMS(request.POST, instance=publi)
+        if publiform.is_valid():
+            publiform.save()
+            return redirect('index')
+
+    else:
+        publiform = TB_PUBLICACOES_FORMS(instance=publi)
+        img_form = TB_IMAGENS_FORMS()
+
+    contexto = {'publiform': publiform, 'img_form': img_form}
+    return render(request, 'publicacao.html', contexto)   
+
 def perfil(request):
     return render(request, 'perfil.html')
 

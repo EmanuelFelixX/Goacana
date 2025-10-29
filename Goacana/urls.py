@@ -31,6 +31,7 @@ urlpatterns = [
     path('editordecadarpio/', editordecadarpio, name='editordecadarpio'),
     path('login/', login, name='login'),
     path('publicacao/', publicacao, name='publicacao'),
+    path('edit_publi/<int:id>/', edit_publi, name='edit_publi'),
     path('add_prato/', add_prato, name='add_prato'),
     path('edit_prato/<int:id>/', edit_prato, name='edit_prato'),
     path('edit_cat/<int:id>/', edit_cat, name='edit_cat'),

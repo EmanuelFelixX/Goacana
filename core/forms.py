@@ -25,3 +25,8 @@ class TB_PUBLICACOES_FORMS(forms.ModelForm):
     class Meta:
         model = TB_PUBLICACOES
         fields = ['Titulo', 'Texto']
+
+class TB_IMAGENS_FORMS(forms.ModelForm):
+    class Meta:
+        model = TB_IMAGENS
+        fields = ['Imagem']

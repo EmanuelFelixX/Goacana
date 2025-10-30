@@ -52,7 +52,7 @@ class TB_PUBLICACOES(models.Model):
 
 class TB_IMAGENS(models.Model):
     Imagem = models.ImageField(upload_to='publi/')
-    ID_Publicacao = models.ForeignKey('TB_PUBLICACOES', on_delete=models.PROTECT)
+    ID_Publicacao = models.ForeignKey('TB_PUBLICACOES', on_delete=models.CASCADE)
 
 #Demais classes
 class TB_HISTORICO(models.Model):

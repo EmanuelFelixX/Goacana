@@ -21,17 +21,24 @@ def index(request):
 def contato(request):
     return render(request, 'contato.html')
 
+def lista_publi(request):
+    publicacoes = TB_PUBLICACOES.objects.all()
+    contexto = {'publis': publicacoes}
+
+    return render(request, 'lista_publi.html', contexto)
+
 def publicacao (request):
     publiform = TB_PUBLICACOES_FORMS(request.POST or None)
     if publiform.is_valid():
         publiform.save()
-        redirect('index')
+        return redirect('lista_publi')
 
-    contexto = {'publiform': publiform}
+    contexto = {'publiform': publiform, 'disp': 'none'}
     return render(request, 'publicacao.html', contexto)
 
 def edit_publi(request, id):
     publi = TB_PUBLICACOES.objects.get(pk=id)
+    fotos = TB_IMAGENS.objects.filter(ID_Publicacao_id = id)
 
     if request.method == 'POST':
         img_form = TB_IMAGENS_FORMS(request.POST, request.FILES)
@@ -39,19 +46,30 @@ def edit_publi(request, id):
             inst = img_form.save(commit=False)
             inst.ID_Publicacao_id = id
             inst.save()
-            return redirect('index')
+            return redirect('edit_publi', id)
 
         publiform = TB_PUBLICACOES_FORMS(request.POST, instance=publi)
         if publiform.is_valid():
             publiform.save()
-            return redirect('index')
+            return redirect('lista_publi')
 
     else:
         publiform = TB_PUBLICACOES_FORMS(instance=publi)
         img_form = TB_IMAGENS_FORMS()
 
-    contexto = {'publiform': publiform, 'img_form': img_form}
-    return render(request, 'publicacao.html', contexto)   
+    contexto = {'publiform': publiform, 'img_form': img_form, 'fotos': fotos, 'disp': 'flex'}
+    return render(request, 'publicacao.html', contexto)
+
+def rem_publi(request, id):
+    publi = TB_PUBLICACOES.objects.get(pk=id)
+    publi.delete()
+    return redirect('lista_publi')
+
+def rem_img(request, id):
+    imagem = TB_IMAGENS.objects.get(pk=id)
+    pgid = imagem.ID_Publicacao.id
+    imagem.delete()
+    return redirect ('edit_publi', pgid)   
 
 def perfil(request):
     return render(request, 'perfil.html')

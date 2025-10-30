@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'subtitulo' %} 
+Lista de Publicações
+{% endblock %}
+{% block 'header' %}
+<link rel="stylesheet" href="{% static 'CSS/editordecadarpio2.css' %}">
+<script src="{% static 'JS/editcard.js' %}" defer></script>
+{% endblock %}
+
+{% block 'content' %}
+<div class="vheight">
+    <div class="titulo">
+        <h2>Lista de publicações</h2>
+        <div class="up-button">
+            <a href="{% url 'publicacao' %}">
+                <button>ADICIONAR</button>
+            </a>
+        </div>
+    </div>
+    <div>
+        {% for publi in publis %}
+            <p>{{ publi.Titulo }} <a href="{% url 'edit_publi' publi.id %}">Editar</a>||<a href="{% url 'rem_publi' publi.id %}">Apagar</a></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

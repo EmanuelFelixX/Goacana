@@ -14,12 +14,27 @@ Publicação
         <form name="publi_form" method="post">
             {% csrf_token %}
             {{ publiform }}
-            <input class="botao" type="submit" value="CADASTRAR">
+            <div class="botoes">
+                <a href="{% url 'lista_publi' %}"><div class="botao" id="JohnTravolta">VOLTAR</div></a>
+                <input class="botao" type="submit" value="CADASTRAR">
+            </div>
         </form>
-        <form name="publi_form" method="post" enctype="multipart/form-data">
+        {% if fotos != null %}
+            <div class="img">
+                {% for foto in fotos %}
+                <div>
+                    <img src="{{ foto.Imagem.url }}" alt=""></img>
+                    <a href="{% url 'rem_img' foto.id %}"><i class="fa-solid fa-trash"></i></a>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form name="publi_form" method="post" enctype="multipart/form-data" style="display: {{ disp }};">
             {% csrf_token %}
             {{ img_form }}
-            <input class="botao" type="submit" value="CADASTRAR IMAGEM">
+            <div class="botoes">
+                <input class="botao" type="submit" value="CADASTRAR IMAGEM">
+            </div>
         </form>
     </div>
 </div>

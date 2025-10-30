@@ -30,8 +30,10 @@ urlpatterns = [
     path('admins/', admins, name= 'admins'),
     path('editordecadarpio/', editordecadarpio, name='editordecadarpio'),
     path('login/', login, name='login'),
+    path('lista_publi/', lista_publi, name='lista_publi'),
     path('publicacao/', publicacao, name='publicacao'),
     path('edit_publi/<int:id>/', edit_publi, name='edit_publi'),
+    path('rem_publi/<int:id>/', rem_publi, name='rem_publi'),
     path('add_prato/', add_prato, name='add_prato'),
     path('edit_prato/<int:id>/', edit_prato, name='edit_prato'),
     path('edit_cat/<int:id>/', edit_cat, name='edit_cat'),
@@ -40,6 +42,7 @@ urlpatterns = [
     path('dest_prato/<int:id>/', destaque_prato, name='dest_prato'),
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
     path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
+    path('rem_img/<int:id>/', rem_img, name='rem_img'),
     #path('envia_email/', send_my_email, name='envia_email'), apenas ativar no computador final
 ]
 

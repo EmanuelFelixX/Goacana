@@ -4,7 +4,7 @@
 Lista de Publicações
 {% endblock %}
 {% block 'header' %}
-<link rel="stylesheet" href="{% static 'CSS/editordecadarpio2.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/lista_publi.css' %}">
 <script src="{% static 'JS/editcard.js' %}" defer></script>
 {% endblock %}
 
@@ -18,9 +18,21 @@ Lista de Publicações
             </a>
         </div>
     </div>
-    <div>
+    <div class="listapubli">
         {% for publi in publis %}
-            <p>{{ publi.Titulo }} <a href="{% url 'edit_publi' publi.id %}">Editar</a>||<a href="{% url 'rem_publi' publi.id %}">Apagar</a></p>
+           <div class="big-item">
+                <div class="data">
+                    <p>{{ publi.Data }}</p>
+                </div>
+                <div class="opt">
+                    <a href="{% url 'edit_publi' publi.id %}">
+                        <button>EDITAR</button>
+                    </a>
+                    <a href="{% url 'rem_publi' publi.id %}">
+                        <button class="donefor">APAGAR</button>
+                    </a>
+                </div>
+           </div>
         {% endfor %}
     </div>
 </div>

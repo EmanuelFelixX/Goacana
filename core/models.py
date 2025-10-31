@@ -49,6 +49,7 @@ class TB_USUARIOS(models.Model):
 class TB_PUBLICACOES(models.Model):
     Titulo = models.CharField(max_length=45)
     Texto = models.TextField()
+    Data = models.DateField(auto_now_add=True)
 
 class TB_IMAGENS(models.Model):
     Imagem = models.ImageField(upload_to='publi/')

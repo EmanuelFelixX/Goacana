@@ -21,6 +21,13 @@ def index(request):
 def contato(request):
     return render(request, 'contato.html')
 
+def publiview(request, id):
+    publi = TB_PUBLICACOES.objects.get(pk=id)
+    imgs = TB_IMAGENS.objects.filter(ID_Publicacao_id = id)
+    contexto = {'publi': publi, 'imgs': imgs}
+
+    return render(request, 'publiview.html', contexto)
+
 def lista_publi(request):
     publicacoes = TB_PUBLICACOES.objects.all()
     contexto = {'publis': publicacoes}

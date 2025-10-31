@@ -39,11 +39,44 @@
             margin: 0 auto;
 
             .data {
-                height: 200px;
+                height: 250px;
                 border: 1px solid black;
                 border-radius: 5px 5px 0 0;
                 display: flex;
+                flex-direction: column;
                 background-color: brown;
+                position: relative;
+                color: white;
+
+                h1 {
+                    text-align: center;
+                    width: 100%;
+                    font-size: 30px;
+                    height: 75px;
+                    margin: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .img {
+                    height: 75px;
+                    overflow: hidden;
+                }
+
+                .texto {
+                    height: 75px;
+                    text-align: justify;
+                    margin: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .date {
+                    margin: 0;
+                    position: absolute;
+                    bottom: 0px;
+                    right: 5px;
+                }
             }
 
             .opt {

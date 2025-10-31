@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'subtitulo' %}
+{{ publi.Titulo }}
+{% endblock %}
+{% block 'header' %}
+<link rel="stylesheet" href="{% static 'CSS/publiview.css' %}">
+{% endblock %}
+{% block 'content' %}
+<div class="vheight">
+    <div class="publiview">
+        <h1>{{ publi.Titulo }}</h1>
+        <p class="texto">{{ publi.Texto }}</p>
+        <div class="imgs">
+            {% for img in imgs %}
+            <img src="{{ img.Imagem.url }}" alt="">
+            {% empty %}
+                <p>Nenhuma imagem disponível</p>
+            {% endfor %}
+        </div>
+        <a href="{% url 'index' %}#nov">
+            <div class="rtu">
+                VOLTAR
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

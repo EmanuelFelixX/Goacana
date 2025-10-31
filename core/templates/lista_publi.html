@@ -5,7 +5,6 @@ Lista de Publicações
 {% endblock %}
 {% block 'header' %}
 <link rel="stylesheet" href="{% static 'CSS/lista_publi.css' %}">
-<script src="{% static 'JS/editcard.js' %}" defer></script>
 {% endblock %}
 
 {% block 'content' %}
@@ -22,7 +21,12 @@ Lista de Publicações
         {% for publi in publis %}
            <div class="big-item">
                 <div class="data">
-                    <p>{{ publi.Data }}</p>
+                    <div class="img">
+                        <img src="{% static 'images/IndexBanner.jpg' %}" alt="">
+                    </div>
+                    <h1>{{ publi.Titulo }}</h1>
+                    <p class="texto">{{ publi.Texto }}</p>
+                    <p class="date">{{ publi.Data }}</p>
                 </div>
                 <div class="opt">
                     <a href="{% url 'edit_publi' publi.id %}">

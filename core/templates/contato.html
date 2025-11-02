@@ -11,52 +11,52 @@ Contato
 {% block 'content' %}
 <h1>FALE CONOSCO</h1>
 <div class="contato-content">
-    <form action="#" method="post">
-        {% csrf_token %}
-        <div class="row">
-            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0s">
-                <label for="nome">NOME:</label>
-                <input type="text" id="nome" name="nome"  required>
+    <div class="full">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0s">
+                    <label for="nome">NOME:</label>
+                    <input type="text" id="nome" name="nome"  required>
+                </div>
+                <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.1s">
+                    <label for="assunto">ASSUNTO:</label>
+                    <input type="text" id="assunto" name="assunto"  required>
+                </div>
+                <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.2s">
+                    <label for="telefone">TELEFONE:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.3s">
+                    <label for="email">EMAIL:</label>
+                    <input type="email" id="email" name="email">
+                </div>
             </div>
-            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.1s">
-                <label for="assunto">ASSUNTO:</label>
-                <input type="text" id="assunto" name="assunto"  required>
+            <div class="row">
+                <div class="campo big fade-in" style="animation-delay:0.4s">
+                    <label for="mensagem">MENSAGEM:</label>
+                    <textarea name="mensagem" id="mensagem" >
+                    </textarea>
+                </div>
             </div>
-            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.2s">
-                <label for="telefone">TELEFONE:</label>
-                <input type="tel" id="telefone" name="telefone">
+            <div class="final-part">
+                <div class="social-medias">
+                    <a href="https://www.instagram.com/goacanarestaurante/">
+                        <i class="fa-brands fa-instagram icon"></i>
+                    </a>
+        
+                    <a href="https://api.whatsapp.com/send/?phone=558491061685&text&type=phone_number&app_absent=0">
+                        <i class="fa-brands fa-whatsapp icon"></i>
+                    </a>
+                </div>
+            <div class="submit-center">
+                    <input type="button" class="botao" value="ENVIAR" onclick="enviarWhats()">
+                </div> 
             </div>
-            <div class="campo col-md-6 col-xxl-3 fade-in" style="animation-delay:0.3s">
-                <label for="email">EMAIL:</label>
-                <input type="email" id="email" name="email">
+                
             </div>
-        </div>
-        <div class="row">
-            <div class="campo big fade-in" style="animation-delay:0.4s">
-                <label for="mensagem">MENSAGEM:</label>
-                <textarea name="mensagem" id="mensagem" >
-                </textarea>
-            </div>
-        </div>
-        <div class="final-part">
-            <div class="social-medias">
-                <a href="https://www.instagram.com/goacanarestaurante/">
-                    <i class="fa-brands fa-instagram icon"></i>
-                </a>
-    
-                <a href="https://api.whatsapp.com/send/?phone=558491061685&text&type=phone_number&app_absent=0">
-                    <i class="fa-brands fa-whatsapp icon"></i>
-                </a>
-            </div>
-            
-           <div class="submit-center">
-                <input type="button" class="botao" value="ENVIAR" onclick="enviarWhats()">
-            </div>
-            
-        </div>
-            
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 
 

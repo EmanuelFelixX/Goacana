@@ -415,6 +415,10 @@ body {h1 {text-align: center;}}
                 border-radius: 5px;
             }
 
+            .card2 {
+                margin-left: -50px;
+            }
+
             .card, .card2 {
                 height: 150px;
             }

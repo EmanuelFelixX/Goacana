@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from django.contrib.auth import authenticate, login
 from django.core.mail import send_mail
 from django.http import HttpResponse
 import random
@@ -210,8 +211,23 @@ def rem_acomp (request, id):
     acomp.delete()
     return redirect('edit_prato', prato_id)
 
-def login(request):
-    return render(request, 'login.html')
+def logins (request):
+    if request.user.is_authenticated:
+        return redirect('admins')
+
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('login')
+            password = request.POST.get('senha')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('admins')
+            else:
+                return render(request, 'login.html')
+
+        else:
+            return render(request, 'login.html')
 
 # def send_my_email(request): função desativada de email -> ativar apenas no computador final
     send_mail(

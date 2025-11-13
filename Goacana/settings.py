@@ -124,6 +124,7 @@ MEDIA_URL = '/DB_MEDIA/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'core.TB_USUARIOS'
 
 #Dados do email -> apenas ativar no computador final
 #EMAIL_BACKEND = config('EMAIL_BACKEND')

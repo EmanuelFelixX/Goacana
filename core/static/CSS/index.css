@@ -216,12 +216,12 @@ body {h1 {text-align: center;}}
     .publi {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        place-items: center;
         gap: 20px;
         padding: 0px 0 20px 0;
 
         .promo-card {
             background-color: #632727;
-            justify-self: center;
             border: 1px solid black;
             border-radius: 5px;
             height: 250px;
@@ -311,6 +311,7 @@ body {h1 {text-align: center;}}
     a {
         color: white;
         text-decoration: none;
+        width: 350px;
     }
 }
 
@@ -319,7 +320,7 @@ body {h1 {text-align: center;}}
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url('../images/IndexBanner.jpg');
     color: white;
-
+    
     .empty {
         text-align: center;
         min-height: 300px;
@@ -335,6 +336,7 @@ body {h1 {text-align: center;}}
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    flex-direction: column;
 }
 
 #form {

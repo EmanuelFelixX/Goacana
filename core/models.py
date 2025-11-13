@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
@@ -25,25 +26,11 @@ class TB_CATEGORIAS(models.Model):
         return self.Nome
 
 #Classes dos usuários
-class TB_USUARIOS(models.Model):
+class TB_USUARIOS(AbstractUser):
     Nome =  models.CharField(max_length=45, null=False)
     CPF = models.CharField(max_length=11, null=False, primary_key=True)
-    Email = models.EmailField(max_length=45, null=False)
     Login = models.CharField(max_length=45, null=False)
     Senha = models.CharField(max_length=45, null=False)
-    # Permissões para os pratos
-    ADD_PRATO = models.BooleanField(default=False)
-    MOD_PRATO = models.BooleanField(default=False)
-    REM_PRATO = models.BooleanField(default=False)
-
-    # Permissões para as publicações
-    ADD_PUBLI = models.BooleanField(default=False)
-    MOD_PUBLI = models.BooleanField(default=False)
-    REM_PUBLI = models.BooleanField(default=False)
-
-    # Permissões para os destaques
-    ADD_DESTA = models.BooleanField(default=False)
-    REM_DESTA = models.BooleanField(default=False)
 
 #Classes das publicações
 class TB_PUBLICACOES(models.Model):

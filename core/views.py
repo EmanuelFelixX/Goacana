@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import *
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.http import HttpResponse
 import random
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -29,12 +30,14 @@ def publiview(request, id):
 
     return render(request, 'publiview.html', contexto)
 
+@login_required(login_url='login')
 def lista_publi(request):
     publicacoes = TB_PUBLICACOES.objects.all()
     contexto = {'publis': publicacoes}
 
     return render(request, 'lista_publi.html', contexto)
 
+@login_required(login_url='login')
 def publicacao (request):
     publiform = TB_PUBLICACOES_FORMS(request.POST or None)
     if publiform.is_valid():
@@ -44,6 +47,7 @@ def publicacao (request):
     contexto = {'publiform': publiform, 'disp': 'none'}
     return render(request, 'publicacao.html', contexto)
 
+@login_required(login_url='login')
 def edit_publi(request, id):
     publi = TB_PUBLICACOES.objects.get(pk=id)
     fotos = TB_IMAGENS.objects.filter(ID_Publicacao_id = id)
@@ -68,22 +72,18 @@ def edit_publi(request, id):
     contexto = {'publiform': publiform, 'img_form': img_form, 'fotos': fotos, 'disp': 'flex'}
     return render(request, 'publicacao.html', contexto)
 
+@login_required(login_url='login')
 def rem_publi(request, id):
     publi = TB_PUBLICACOES.objects.get(pk=id)
     publi.delete()
     return redirect('lista_publi')
 
+@login_required(login_url='login')
 def rem_img(request, id):
     imagem = TB_IMAGENS.objects.get(pk=id)
     pgid = imagem.ID_Publicacao.id
     imagem.delete()
     return redirect ('edit_publi', pgid)   
-
-def perfil(request):
-    return render(request, 'perfil.html')
-
-def cardapio(request):
-    return render(request, 'cardapio.html')
 
 def cardv2 (request):
     lista_pratos = TB_PRATOS.objects.filter(Disponibilidade=True)
@@ -98,9 +98,11 @@ def cardv2 (request):
 
     return render (request, 'cardv2.html', contexto)
 
+@login_required(login_url='login')
 def admins(request):
     return render(request, 'admins.html')
 
+@login_required(login_url='login')
 def editordecadarpio(request):
     lista_pratos = TB_PRATOS.objects.all()
     lista_categorias = TB_CATEGORIAS.objects.all().order_by('Ordem')
@@ -119,6 +121,7 @@ def editordecadarpio(request):
     contexto = {'lista_pratos': lista_pratos, 'lista_categorias': lista_categorias, 'formcat': formcat, 'active': act_cat, 'sit': 'none'}
     return render(request, 'editorcardv2.html', contexto)
 
+@login_required(login_url='login')
 def edit_cat(request, id):
     categoria = TB_CATEGORIAS.objects.get(pk=id)
 
@@ -134,6 +137,7 @@ def edit_cat(request, id):
     contexto = {'formcat': formcat, 'sit': 'block'}
     return render(request, 'editorcardv2.html', contexto)
 
+@login_required(login_url='login')
 def add_prato(request):
     if request.method == 'POST':
         formcar = TB_PRATOS_FORMS(request.POST, request.FILES)
@@ -146,7 +150,7 @@ def add_prato(request):
     contexto = {'formcar': formcar, 'sit': 'False'}
     return render (request, 'newprato.html', contexto)
 
-
+@login_required(login_url='login')
 def edit_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
     img_prato = TB_PRATOS.objects.filter(pk=id)
@@ -175,6 +179,7 @@ def edit_prato(request, id):
     contexto = {'formcar': formcar, 'formacomp': formacomp, 'lista_acomp': lista_acomp, 'img_prato': img_prato}
     return render (request, 'newprato.html', contexto)
 
+@login_required(login_url='login')
 def diponibilidade_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
     if prato.Disponibilidade == True:
@@ -185,6 +190,7 @@ def diponibilidade_prato(request, id):
 
     return redirect('editordecadarpio')
 
+@login_required(login_url='login')
 def destaque_prato (request, id):
     prato = TB_PRATOS.objects.get(pk=id)
     if prato.Destaque == True:
@@ -195,16 +201,19 @@ def destaque_prato (request, id):
 
     return redirect('editordecadarpio')
 
+@login_required(login_url='login')
 def rem_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
     prato.delete()
     return redirect('editordecadarpio')
 
+@login_required(login_url='login')
 def rem_cat(request, id):
     cat = TB_CATEGORIAS.objects.get(pk=id)
     cat.delete()
     return redirect('editordecadarpio')
 
+@login_required(login_url='login')
 def rem_acomp (request, id):
     acomp = TB_ACOMPANHAMENTOS.objects.get(pk=id)
     prato_id = acomp.ID_Prato_id
@@ -228,6 +237,10 @@ def logins (request):
 
         else:
             return render(request, 'login.html')
+        
+def logoff (request):
+    logout(request)
+    return redirect('index')
 
 # def send_my_email(request): função desativada de email -> ativar apenas no computador final
     send_mail(

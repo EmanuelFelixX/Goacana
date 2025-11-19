@@ -24,8 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('contato/', contato, name='contato'),
-    path('perfil/', perfil, name='perfil'),
-    path('cardapio/', cardapio, name = 'cardapio'),
     path('cardv2', cardv2, name='cardv2'),
     path('admins/', admins, name= 'admins'),
     path('editordecadarpio/', editordecadarpio, name='editordecadarpio'),
@@ -44,6 +42,7 @@ urlpatterns = [
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
     path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
     path('rem_img/<int:id>/', rem_img, name='rem_img'),
+    path('logoff/', logoff, name='logoff'),
     #path('envia_email/', send_my_email, name='envia_email'), apenas ativar no computador final
 ]
 

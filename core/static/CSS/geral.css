@@ -99,9 +99,10 @@ body {margin: 0; font-family: "IM Fell English", serif !important; overflow-x: h
     }
 
     p {
+        text-align: center;
+        width: 80%;
         color: white;
         font-size: 0.8rem;
-        margin-left: 20px;
     }
 
     .media {

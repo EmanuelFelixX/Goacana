@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'subtitulo' %} 
+Cadastrar Usuário
+{% endblock %}
+{% block 'header' %}
+<link rel="stylesheet" href="{% static 'CSS/cad_user.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div class="vheight">
+    <div class="form-frame">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <div class="botoes">
+                <a href="{% url 'users' %}">
+                    <div>
+                        CANCELAR
+                    </div>
+                </a>
+                <input type="submit" value="CADASTRAR" class="botao">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

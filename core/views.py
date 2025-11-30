@@ -242,7 +242,41 @@ def logoff (request):
     logout(request)
     return redirect('index')
 
-# def send_my_email(request): função desativada de email -> ativar apenas no computador final
+def cad_user(request):
+    if request.method == 'POST':
+        form = TB_USUARIOS_FORMS(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('users')
+    
+    else: 
+        form = TB_USUARIOS_FORMS()
+
+    contexto = {'form': form}
+    return render(request, 'cad_user.html', contexto)
+
+def edit_user(request, id):
+    user = TB_USUARIOS.objects.get(pk=id)
+
+    if request.method == 'POST':
+        form = TB_USUARIOS_FORMS(request.POST, isinstance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('users')
+
+    else:
+        form = TB_USUARIOS_FORMS(instance=user)
+
+    contexto = {'form': form}
+    return render(request, 'cad_user.html', contexto)
+
+def lista_users(request):
+    users = TB_USUARIOS.objects.all()
+    contexto = {'users': users}
+
+    return render(request, 'users.html', contexto)
+
+def send_my_email(request): #função desativada de email -> ativar apenas no computador final
     send_mail(
         'This is the Subject',                         # subject
         'This is the plain-text message body.',        # message

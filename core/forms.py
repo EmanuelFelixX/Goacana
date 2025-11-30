@@ -1,5 +1,11 @@
 from django import forms
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+
+class TB_USUARIOS_FORMS(UserCreationForm):
+    class Meta:
+        model = TB_USUARIOS
+        fields = ['Nome', 'CPF', 'username', 'email', 'password1', 'password2']
 
 class TB_PRATOS_FORMS(forms.ModelForm):
     class Meta:

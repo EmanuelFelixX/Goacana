@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'subtitulo' %} 
+Lista de Usuários
+{% endblock %}
+{% block 'header' %}
+<link rel="stylesheet" href="{% static 'CSS/lista_users.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div class="vheight">
+    <div class="titulo">
+        <h2>Lista de Usuários</h2>
+        <div class="up-button">
+            <a href="{% url 'cad_user' %}">
+                <button>ADICIONAR</button>
+            </a>
+        </div>
+    </div>
+    {% for user in users %}
+        <div class="card">
+            <h3>Nome: {{ user.Nome }}</h3>
+            <p>Email: {{ user.email }}</p>
+            <p>Telefone: {{ user.telefone }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

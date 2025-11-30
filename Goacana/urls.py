@@ -42,6 +42,9 @@ urlpatterns = [
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
     path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
     path('rem_img/<int:id>/', rem_img, name='rem_img'),
+    path('users/', lista_users, name='users'),
+    path('cad_user/', cad_user, name='cad_user'),
+    path('edit_user/<int:id>/', edit_user, name='edit_user'),
     path('logoff/', logoff, name='logoff'),
     #path('envia_email/', send_my_email, name='envia_email'), apenas ativar no computador final
 ]

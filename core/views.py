@@ -100,7 +100,7 @@ def cardv2 (request):
 
 @login_required(login_url='login')
 def admins(request):
-    return render(request, 'admins.html')
+    return render(request, 'admins.html', {'user': request.user})
 
 @login_required(login_url='login')
 def editordecadarpio(request):
@@ -259,13 +259,13 @@ def edit_user(request, id):
     user = TB_USUARIOS.objects.get(pk=id)
 
     if request.method == 'POST':
-        form = TB_USUARIOS_FORMS(request.POST, isinstance=user)
+        form = TB_USUARIOS_FORMS_EDIT(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('users')
+            return redirect('login')
 
     else:
-        form = TB_USUARIOS_FORMS(instance=user)
+        form = TB_USUARIOS_FORMS_EDIT(instance=user)
 
     contexto = {'form': form}
     return render(request, 'cad_user.html', contexto)

@@ -34,11 +34,12 @@ Admins
                     </a>
                 </div>
                 <div class="conj">
-                    <a href="{% url 'users' %}">
+                    <a href="{% url 'edit_user' user.id %}">
                         <div class="icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
                         <h3>Usuários</h3>
+                        <h3>{{ user }}</h3>
                     </a>
                 </div>
             </div>

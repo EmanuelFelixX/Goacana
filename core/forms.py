@@ -1,6 +1,11 @@
 from django import forms
 from .models import *
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
+class TB_USUARIOS_FORMS_EDIT(UserChangeForm):
+    class Meta:
+        model = TB_USUARIOS
+        fields = ['Nome', 'CPF', 'username', 'email', 'password']
 
 class TB_USUARIOS_FORMS(UserCreationForm):
     class Meta:

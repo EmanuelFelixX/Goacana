@@ -270,6 +270,22 @@ def edit_user(request, id):
     contexto = {'form': form}
     return render(request, 'cad_user.html', contexto)
 
+def edit_password(request, id):
+    user = TB_USUARIOS.objects.get(pk=id)
+
+    if request.method == '`POST':
+        form = TB_USUARIOS_FORMS_PASS(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+
+    else:
+        form = TB_USUARIOS_FORMS_PASS(instance=user)
+
+    contexto = {'form': form}
+    return render(request, 'change_password.html', contexto)
+
+
 def lista_users(request):
     users = TB_USUARIOS.objects.all()
     contexto = {'users': users}

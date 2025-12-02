@@ -45,6 +45,7 @@ urlpatterns = [
     path('users/', lista_users, name='users'),
     path('cad_user/', cad_user, name='cad_user'),
     path('edit_user/<int:id>/', edit_user, name='edit_user'),
+    path('chn/<int:id>', edit_password, name='chn'),
     path('logoff/', logoff, name='logoff'),
     #path('envia_email/', send_my_email, name='envia_email'), apenas ativar no computador final
 ]

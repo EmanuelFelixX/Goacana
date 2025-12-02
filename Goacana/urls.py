@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import path
 from core.views import *
 from django.conf import settings
@@ -45,7 +46,8 @@ urlpatterns = [
     path('users/', lista_users, name='users'),
     path('cad_user/', cad_user, name='cad_user'),
     path('edit_user/<int:id>/', edit_user, name='edit_user'),
-    path('chn/<int:id>', edit_password, name='chn'),
+    path('password_change/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change_form.html'), name='password_change'),
+    path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), name='password_change_done'),
     path('logoff/', logoff, name='logoff'),
     #path('envia_email/', send_my_email, name='envia_email'), apenas ativar no computador final
 ]

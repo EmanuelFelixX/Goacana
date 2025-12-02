@@ -34,13 +34,22 @@ Admins
                     </a>
                 </div>
                 <div class="conj">
-                    <a href="{% url 'edit_user' user.id %}">
-                        <div class="icon">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <h3>Usuários</h3>
-                        <h3>{{ user }}</h3>
-                    </a>
+                    {% if user.id == 1 %}
+                        <a href="{% url 'users' %}">
+                            <div class="icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h3>Usuários</h3>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'edit_user' user.id %}">
+                            <div class="icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h3>Usuários</h3>
+                            <h3>{{ user }}</h3>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
             <a href="{% url 'logoff' %}">

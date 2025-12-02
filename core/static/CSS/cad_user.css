@@ -20,6 +20,10 @@
 
         form {
             row-gap: 10px;
+
+            #id_password {
+                display: none;
+            }
         }
     
         .botoes {

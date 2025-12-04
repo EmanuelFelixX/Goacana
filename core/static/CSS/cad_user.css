@@ -59,4 +59,21 @@
             font-size: 12px;
         }
     }
+
+    .dados_extras {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 438px;
+        padding: 10px;
+
+        .wow {
+            flex-direction: column;
+            p {
+                width: 416px;
+                height: 30px;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+        }
+    }
 }

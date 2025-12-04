@@ -29,6 +29,8 @@ class TB_CATEGORIAS(models.Model):
 class TB_USUARIOS(AbstractUser):
     Nome =  models.CharField(max_length=45, null=False)
     CPF = models.CharField(max_length=11, null=False)
+    Telefone = models.CharField(max_length=15, null=True)
+    Data_Nascimento = models.DateField(null=True)
     Login = models.CharField(max_length=45, null=False)
     Senha = models.CharField(max_length=45, null=False)
 

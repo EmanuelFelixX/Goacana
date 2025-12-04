@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 class TB_USUARIOS_FORMS_EDIT(UserChangeForm):
     class Meta:
         model = TB_USUARIOS
-        fields = ['Nome', 'CPF', 'username', 'email', 'password']
+        fields = ['Nome', 'email', 'Telefone', 'username', 'password']
 
 class TB_USUARIOS_FORMS_PASS(UserCreationForm):
     class Meta:
@@ -15,7 +15,11 @@ class TB_USUARIOS_FORMS_PASS(UserCreationForm):
 class TB_USUARIOS_FORMS(UserCreationForm):
     class Meta:
         model = TB_USUARIOS
-        fields = ['Nome', 'CPF', 'username', 'email', 'password1', 'password2']
+        fields = ['Nome', 'CPF', 'Telefone', 'Data_Nascimento', 'username', 'email', 'password1', 'password2']
+
+        widgets = {
+            'Data_Nascimento': forms.DateInput(attrs={'type': 'date'}),
+        }
 
 class TB_PRATOS_FORMS(forms.ModelForm):
     class Meta:

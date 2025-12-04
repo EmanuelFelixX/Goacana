@@ -26,5 +26,17 @@ Cadastrar Usuário
             </div>
         </form>
     </div>
+    {% if user.id != 1 %}
+        <div class="dados_extras {{ state }}">
+            <div class="wow">
+                CPF:
+                <p>{{ user.CPF }}</p>
+            </div>
+            <div class="wow">
+                Data de Nascimento:
+                <p>{{ user.Data_Nascimento }}</p>
+            </div>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

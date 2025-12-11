@@ -220,6 +220,7 @@ def rem_acomp (request, id):
     acomp.delete()
     return redirect('edit_prato', prato_id)
 
+@login_required(login_url='login')
 def logins (request):
     if request.user.is_authenticated:
         return redirect('admins')
@@ -237,11 +238,13 @@ def logins (request):
 
         else:
             return render(request, 'login.html')
-        
+
+@login_required(login_url='login')       
 def logoff (request):
     logout(request)
     return redirect('index')
 
+@login_required(login_url='login')
 def cad_user(request):
     if request.method == 'POST':
         form = TB_USUARIOS_FORMS(request.POST)
@@ -255,6 +258,7 @@ def cad_user(request):
     contexto = {'form': form}
     return render(request, 'cad_user.html', contexto)
 
+@login_required(login_url='login')
 def edit_user(request, id):
     user = TB_USUARIOS.objects.get(pk=id)
 
@@ -270,6 +274,7 @@ def edit_user(request, id):
     contexto = {'form': form}
     return render(request, 'cad_user.html', contexto)
 
+@login_required(login_url='login')
 def edit_password(request, id):
     user = TB_USUARIOS.objects.get(pk=id)
 
@@ -285,13 +290,21 @@ def edit_password(request, id):
     contexto = {'form': form}
     return render(request, 'change_password.html', contexto)
 
+@login_required(login_url='login')
+def rem_user (request, id):
+    user = TB_USUARIOS.objects.get(pk=id)
+    user.delete()
+    return redirect('users')
 
+
+@login_required(login_url='login')
 def lista_users(request):
     users = TB_USUARIOS.objects.all()
     contexto = {'users': users}
 
     return render(request, 'users.html', contexto)
 
+@login_required(login_url='login')
 def send_my_email(request): #função desativada de email -> ativar apenas no computador final
     send_mail(
         'This is the Subject',                         # subject

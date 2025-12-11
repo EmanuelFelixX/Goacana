@@ -34,7 +34,7 @@ Admins
                     </a>
                 </div>
                 <div class="conj">
-                    {% if user.id == 1 %}
+                    {% if user.is_superuser == 1 %}
                         <a href="{% url 'users' %}">
                             <div class="icon">
                                 <i class="fa-solid fa-users"></i>

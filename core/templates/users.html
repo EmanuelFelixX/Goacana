@@ -22,6 +22,9 @@ Lista de Usuários
             <h3>Nome: {{ user.Nome }}</h3>
             <p>Email: {{ user.email }}</p>
             <p>Telefone: {{ user.telefone }}</p>
+            {% if user.is_superuser != 1 %}
+                <a href="{% url 'rem_user' user.id %}">Apagar</a>
+            {% endif %}
         </div>
     {% endfor %}
 </div>

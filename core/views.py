@@ -179,6 +179,9 @@ def edit_prato(request, id):
     contexto = {'formcar': formcar, 'formacomp': formacomp, 'lista_acomp': lista_acomp, 'img_prato': img_prato}
     return render (request, 'newprato.html', contexto)
 
+def acompage(request, id):
+    return render(request, 'acompage.html')
+
 @login_required(login_url='login')
 def diponibilidade_prato(request, id):
     prato = TB_PRATOS.objects.get(pk=id)
@@ -220,7 +223,7 @@ def rem_acomp (request, id):
     acomp.delete()
     return redirect('edit_prato', prato_id)
 
-@login_required(login_url='login')
+
 def logins (request):
     if request.user.is_authenticated:
         return redirect('admins')

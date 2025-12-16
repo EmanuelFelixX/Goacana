@@ -328,6 +328,15 @@
 }
 
 @media (max-width: 490px) {
+    .titulo {
+        .up-button {
+            width: 255px !important;
+            display: grid !important; 
+            grid-template-columns: 120px 120px !important;
+            row-gap: 5px;
+        }
+    }
+
     .prato {
 
         .buttons {

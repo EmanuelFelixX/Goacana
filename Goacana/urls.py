@@ -43,6 +43,7 @@ urlpatterns = [
     path('dest_prato/<int:id>/', destaque_prato, name='dest_prato'),
     path('rem_cat/<int:id>/', rem_cat, name='rem_cat'),
     path('rem_acomp/<int:id>/', rem_acomp, name='rem_acomp'),
+    path('rem_acomp2/<int:id>/', rem_acomp2, name='rem_acomp2'),
     path('rem_img/<int:id>/', rem_img, name='rem_img'),
     path('users/', lista_users, name='users'),
     path('cad_user/', cad_user, name='cad_user'),

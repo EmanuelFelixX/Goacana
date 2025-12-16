@@ -10,26 +10,28 @@ Acompanhamentos - {{ prato.Nome }}
 {% block 'content' %}
 <div class="vheight">
     <div class="card">
-        <div style="display: flex;">
+        <div style="display: flex;" class="wowie">
             <div class="photo-side">
                 {% if prato.Imagem %}
                     <img src="{{ prato.Imagem.url }}" alt="">
                 {% else %}
                     <img src="{% static 'images/placeholder.png' %}" alt="">
                 {% endif %}
-                {{ prato.Nome }}
+                <h3>{{ prato.Nome }}</h3>
             </div>
             <div class="data-side">
+                <h3>ACOMPANHAMENTOS</h3>
                 <div class="acomp-list">
                     {% for acomp in lista %}
+                        <p>{{ acomp.Nome }} ({{ acomp.Quantidade }}g) <a href="{% url 'rem_acomp2' acomp.id %}"><i class="fa-solid fa-trash"></i></a></p>
                     {% empty %}
                         <p>Nenhum acompanhamento cadastrado.</p>
                     {% endfor %}
                 </div>
-                <form method="post" class="fromarea">
+                <form method="post" class="acomp-form">
                     {% csrf_token %}
                     {{ form }}
-                    <input type="submit" value="ENTRAR" class="botao">
+                    <input type="submit" value="CADASTRAR" class="botao">
                 </form>
             </div>
             <a href="{% url 'editordecadarpio' %}">

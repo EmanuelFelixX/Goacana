@@ -237,8 +237,15 @@ def rem_acomp (request, id):
     acomp = TB_ACOMPANHAMENTOS.objects.get(pk=id)
     prato_id = acomp.ID_Prato_id
     acomp.delete()
+
     return redirect('edit_prato', prato_id)
 
+def rem_acomp2 (request, id):
+    acomp = TB_ACOMPANHAMENTOS.objects.get(pk=id)
+    prato_id = acomp.ID_Prato_id
+    acomp.delete()
+
+    return redirect('acompage', prato_id)
 
 def logins (request):
     if request.user.is_authenticated:

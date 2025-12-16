@@ -313,6 +313,14 @@ body {h1 {text-align: center;}}
         text-decoration: none;
         width: 350px;
     }
+
+    #false-button {
+        border: 1px solid black;
+        border-radius: 5px;
+        color: black;
+        text-align: center;
+        padding: 10px;
+    }
 }
 
 #promo, #nov {

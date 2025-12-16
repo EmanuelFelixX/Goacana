@@ -14,7 +14,7 @@ body {
     text-align: left;
     font-family: "Lavishly Yours", cursive;
     font-style: italic;
-    padding-left: 75px;
+    margin-left: 25px;
     font-size: 140px;
     padding-bottom: 20px;
 }
@@ -30,7 +30,7 @@ body {
 
 .comida {
     min-width: 500px;
-    margin-left: 75px;
+    margin-left: 25px;
     margin-bottom: 20px;
 }
 
@@ -65,27 +65,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     margin-bottom: 10px;
-    width: 915px;
-}
-
-.container2 {
-    background-color: #6b1d1d;
-    justify-content: center;
-    width: 915px;
-    margin: 0 auto;
-    padding-bottom: 30px;
-    margin-bottom: 10px;
-
-}
-
-.container3 {
-    background-color: #6b1d1d;
-    display: flex;
-    width: 915px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    width: 1040px;
 }
 
 .div-com-imagem{
@@ -94,7 +74,45 @@ body {
 
 
 @media screen and (max-width:1050px) {
-    .container1, .container2, .container3 {
-        transform: scale(0.8);
+    .container1 {
+        width: 90% !important;
+
+        .titulo {
+            font-size: 10rem;
+        }
+
+        .comida {
+            max-width: 300px;
+
+            .titulo-comidas, p {
+                font-size: 30px;
+            }
+        }
+
+        .imagem {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .container1 {
+        width: 90% !important;
+
+        .titulo {
+            font-size: 10rem;
+        }
+
+        .comida {
+            width: 200px !important;
+
+            .titulo-comidas, p {
+                font-size: 24px;
+            }
+        }
+
+        .imagem {
+            display: none;
+        }
     }
 }

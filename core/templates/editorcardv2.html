@@ -14,6 +14,7 @@ Editar cardápio
         <h2>Editor de Cardápio</h2>
         <div class="up-button">
             <button id="butones">CATEGORIAS</button>
+            <button id="butonestwo">ACOMP.</button>
             <a href="{% url 'add_prato' %}">
                 <button>ADICIONAR</button>
             </a>
@@ -88,6 +89,23 @@ Editar cardápio
             {{ formcat }}
             <input type="submit" value="ADICIONAR">
         </form>
+    </div>
+    <div class="acomp-seq" id="menes2">
+        <h3>SELECIONE UM PRATO</h3>
+        <div class="pratos">
+            {% for prato in lista_pratos %}
+                <a href="{% url 'acompage' prato.id %}">
+                    <div class="acomp-item">
+                        {% if prato.Imagem %}
+                            <img src="{{ prato.Imagem.url }}" alt="{{ produto.Nome }}">
+                        {% else %}
+                            <img src="{% static 'images/placeholder.png' %}" alt="Nenhuma imagem disponível">
+                        {% endif %}
+                        <p>{{ prato.Nome }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

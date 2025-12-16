@@ -180,7 +180,23 @@ def edit_prato(request, id):
     return render (request, 'newprato.html', contexto)
 
 def acompage(request, id):
-    return render(request, 'acompage.html')
+    prato = TB_PRATOS.objects.get(pk=id)
+    lista_acomp = TB_ACOMPANHAMENTOS.objects.filter(ID_Prato_id=id)
+
+    if request.method == 'POST':
+        formacomp = TB_ACOMPANHAMENTOS_FORMS(request.POST)
+        if formacomp.is_valid():
+            acomp = formacomp.save(commit=False)
+            acomp.ID_Prato_id = id
+            acomp.save()
+            return redirect('acompage', id=id)
+    
+    else:
+        formacomp = TB_ACOMPANHAMENTOS_FORMS()
+
+    contexto = {'prato': prato, 'lista': lista_acomp, 'form': formacomp}
+
+    return render(request, 'acompage.html', contexto)
 
 @login_required(login_url='login')
 def diponibilidade_prato(request, id):

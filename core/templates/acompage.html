@@ -1,13 +1,41 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
 {% block 'subtitulo' %}
-Admins
+Acompanhamentos - {{ prato.Nome }}
 {% endblock %}
 {% block 'header' %}
-<link rel="stylesheet" href="{% static 'CSS/admins.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/add_prato.css' %}">
 {% endblock %}
 
 {% block 'content' %}
-
+<div class="vheight">
+    <div class="card">
+        <div style="display: flex;">
+            <div class="photo-side">
+                {% if prato.Imagem %}
+                    <img src="{{ prato.Imagem.url }}" alt="">
+                {% else %}
+                    <img src="{% static 'images/placeholder.png' %}" alt="">
+                {% endif %}
+                {{ prato.Nome }}
+            </div>
+            <div class="data-side">
+                <div class="acomp-list">
+                    {% for acomp in lista %}
+                    {% empty %}
+                        <p>Nenhum acompanhamento cadastrado.</p>
+                    {% endfor %}
+                </div>
+                <form method="post" class="fromarea">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="ENTRAR" class="botao">
+                </form>
+            </div>
+            <a href="{% url 'editordecadarpio' %}">
+                <button id="wownicegraphics">VOLTAR</button>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

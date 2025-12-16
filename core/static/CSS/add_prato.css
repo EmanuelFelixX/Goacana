@@ -124,7 +124,7 @@ body {
 
     .data-side {
         width: 60%;
-
+        
         > div {
             display: flex;
             justify-content: center;
@@ -140,6 +140,12 @@ body {
             label {
                 margin-top: 10px;
             }
+        }
+
+        .acomp-list {
+            margin: 0 auto;
+            width: 80%;
+            border: 1px solid black;
         }
     }
 

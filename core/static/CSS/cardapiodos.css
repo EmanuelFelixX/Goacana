@@ -9,7 +9,6 @@ body {
 }
 
 .titulo {
-    width: 615px;
     color: rgb(255, 251, 232);
     text-align: left;
     font-family: "Lavishly Yours", cursive;
@@ -65,7 +64,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     margin-bottom: 10px;
-    width: 1040px;
+    width: 915px;
 }
 
 .div-com-imagem{
@@ -82,7 +81,8 @@ body {
         }
 
         .comida {
-            max-width: 300px;
+            min-width: 0;
+            max-width: 500px;
 
             .titulo-comidas, p {
                 font-size: 30px;
@@ -95,16 +95,17 @@ body {
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:525px) {
     .container1 {
         width: 90% !important;
 
         .titulo {
-            font-size: 10rem;
+            font-size: 7rem;
+            margin: 0;
         }
 
         .comida {
-            width: 200px !important;
+            width: 350px !important;
 
             .titulo-comidas, p {
                 font-size: 24px;
@@ -113,6 +114,23 @@ body {
 
         .imagem {
             display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .container1 {
+        .titulo {
+            font-size: 5rem;
+            margin-left: 25px;
+        }
+
+        .comida {
+            width: 300px !important;
+
+            .titulo-comidas, p {
+                font-size: 24px;
+            }
         }
     }
 }
